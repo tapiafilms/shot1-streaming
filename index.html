@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shot 1 Streaming</title>
+  
+  <meta name="description" content="Plataforma de streaming Shot 1 - Catálogo exclusivo de cortometrajes, miniseries y pilotos audiovisuales dirigidos por Pablo Tapia.">
+  <meta name="keywords" content="Shot 1, streaming, cortometrajes, miniseries, cine chileno, Pablo Tapia, suspenso">
+  <meta name="theme-color" content="#040919">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon" type="image/png">
+  <link href="img/favicon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@300;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800&display=swap" rel="stylesheet">
+
+  <!-- Enlace a Estilos CSS Refactorizados -->
+  <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Cabecera Premium (Header) -->
+  <header>
+    <div class="head">
+      <h1>
+        <a href="#" id="logo-trigger">
+          <img class="logo-principal" src="img/logo-streaming.png" alt="Shot 1 Streaming">
+        </a>
+      </h1>
+    </div>
+    <div class="head" style="padding-right: 50px;">
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Canal de YouTube de Shot 1 (reemplazar por URL del canal)">
+        <img width="100px" src="img/youtube.png" alt="YouTube Canal" loading="lazy">
+      </a>
+    </div> 
+  </header>
+    
+  <!-- PANTALLA DE BLOQUEO HORIZONTAL (Para móviles) -->
+  <div id="bloqueo-horizontal">
+    <video id="video-fondo" autoplay muted loop playsinline>
+      <source src="https://cdn.coverr.co/videos/coverr-black-smoke-loop-0213/1080p.mp4" type="video/mp4">
+    </video>
+    <h2 id="mensaje-bloqueo">Por favor, gira tu dispositivo en posición vertical 📱</h2>
+  </div>  
+
+  <!-- DIÁLOGOS NATIVOS DE REPARTO Y EQUIPO (<dialog>) -->
+  
+  <!-- Diálogo Diapositiva 1 (120 Minutos) -->
+  <dialog id="panelReparto1" class="panel-oculto" closedby="any" aria-labelledby="repartoTitle1">
+    <button class="close-panel" aria-label="Cerrar panel">✕</button>
+    <div class="info-content">
+      <div class="info-detalle">
+        <div>
+          <h3 id="repartoTitle1" style="margin-top:0; color:var(--primary-color);">120 Minutos</h3>
+          <b>Reparto:</b> Carlos Wedeles, Mika Larraguibel, Josefa Nef Videla y Jorge Torres.<br><br>
+          <b>Director:</b> Pablo Tapia<br>
+          <b>Productor:</b> Nicole Ortiz<br>
+          <b>Asistente de Dirección:</b> Angello Bonati<br>
+          <b>Cámara:</b> Tomás Nuñez<br>
+          <b>Co-productores:</b> Carlos Wedeles, Roberto Yañez.
+        </div>
+        <div>
+          <table>
+            <tr>
+              <td valign="top"><img width="120px" src="img/pic-carlos.png" alt="Carlos Wedeles"></td>
+              <td valign="top"><img width="120px" src="img/pic-mika.png" alt="Mika Larraguibel"></td>
+            </tr>
+            <tr>
+                <td valign="top">Carlos Wedeles<br><span style="font-size:11px;color:var(--text-gray);">Actor y Productor</span></td>
+                <td valign="top">Mika Larraguibel<br><span style="font-size:11px;color:var(--text-gray);">Actriz y Coach de Vida</span></td>
+              </tr>
+              <tr>
+                <td height="20px" valign="top"><a href="https://www.imdb.com/find?q=Carlos+Wedeles" target="_blank" rel="noopener">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://mikalarraguibel.com" target="_blank" rel="noopener">Ver más</a></td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tr>
+              <td valign="top"><img width="120px" src="img/pic-josefa.png" alt="Josefa Nef Videla"></td>
+              <td valign="top"><img width="120px" src="img/pic-jorge.png" alt="Jorge Torres"></td>
+            </tr>
+            <tr>
+                <td valign="top">Josefa Nef Videla<br><span style="font-size:11px;color:var(--text-gray);">Actriz</span></td>
+                <td valign="top">Jorge Torres<br><span style="font-size:11px;color:var(--text-gray);">Actor</span></td>
+              </tr>
+              <tr>
+                <td height="20px" valign="top"><a href="https://www.imdb.com/find?q=Josefa+Nef+Videla" target="_blank" rel="noopener">Ver más</a></td>
+                <td height="20px" valign="top"><a href="https://www.imdb.com/find?q=Jorge+Torres+actor" target="_blank" rel="noopener">Ver más</a></td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <span style="font-size:16px;font-weight:700;">El Proyecto</span><br><br>
+          <span style="font-size:12px;color:var(--text-light-gray);">
+            120 Minutos inició su proceso de producción y rodaje en 2022, extendiéndose hasta 2025 debido a diversos factores. Ese mismo año comenzó su etapa de postulación a destacados festivales de cine.<br><br>
+            El proyecto nació con el objetivo de desarrollar una historia atractiva y visualmente sólida, capaz de reflejar el talento y compromiso de un equipo técnico profundamente apasionado por su oficio.<br><br>
+            Realizado con un presupuesto reducido, se concretó gracias al profesionalismo de sus actores y equipo técnico, quienes valoraron el arte por sobre los recursos.
+          </span>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Diálogo Diapositiva 3 (Willy Fix) -->
+  <dialog id="panelReparto3" class="panel-oculto" closedby="any" aria-labelledby="repartoTitle3">
+    <button class="close-panel" aria-label="Cerrar panel">✕</button>
+    <div class="info-content">
+      <div class="info-detalle">
+        <div>
+          <h3 id="repartoTitle3" style="margin-top:0; color:var(--primary-color);">Willy Fix</h3>
+          <b>Reparto:</b> Bastian Arriagada, Catalina Silva, Andrés Lamadrid, Kathy Contreras, Jaime Artus, Jacob Riquelme, Carlos Wedeles, Francisca Bidart, Rocío Toscano, Jan Jacobsen, Joaquín Yutronic & Wil Edgar.<br><br>
+          <b>Director:</b> Pablo Tapia<br>
+          <b>Productores:</b> Nicole Ortiz & Valentina Domel<br>
+          <b>Asistente de Dirección:</b> Dominic Saavedra<br>
+          <b>Cámaras:</b> Tomás Nuñez & Javiera Farfán<br>
+          <b>Co-productores:</b> Cristian Romero & Roberto Yañez.
+        </div>
+        <div>
+          <table>
+            <tr>
+              <td valign="top"><img width="120px" src="img/pic-bastian.png" alt="Bastian Arriagada"></td>
+              <td valign="top"><img width="120px" src="img/pic-cata.png" alt="Catalina Silva"></td>
+            </tr>
+            <tr>
+              <td valign="top">Bastian Arriagada<br><span style="font-size:11px;color:var(--text-gray);">Actor y Pintor</span></td>
+              <td valign="top">Catalina Silva<br><span style="font-size:11px;color:var(--text-gray);">Actriz</span></td>
+            </tr>
+            <tr>
+              <td height="20px" valign="top"><a href="https://chileactores.org/casting/bastian-arriagada/" target="_blank" rel="noopener">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://www.catalinasilva.com/" target="_blank" rel="noopener">Ver más</a></td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tr>
+              <td valign="top"><img width="120px" src="img/pic-jaime.png" alt="Jaime Artus"></td>
+              <td valign="top"><img width="120px" src="img/pic-kathy.png" alt="Kathy Contreras"></td>
+            </tr>
+            <tr>
+              <td valign="top">Jaime Artus<br><span style="font-size:11px;color:var(--text-gray);">Actor</span></td>
+              <td valign="top">Kathy Contreras<br><span style="font-size:11px;color:var(--text-gray);">Actriz y Comunicadora</span></td>
+            </tr>
+            <tr>
+              <td height="20px" valign="top"><a href="https://m.imdb.com/es/name/nm3948992/?ref_=fn_all_nme_1" target="_blank" rel="noopener">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://m.imdb.com/es/name/nm4738505/?ref_=fn_all_nme_1" target="_blank" rel="noopener">Ver más</a></td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <span style="font-size:16px;font-weight:700;">El Proyecto</span><br><br>
+          <span style="font-size:12px;color:var(--text-light-gray);">
+            Willy Fix nació de la necesidad de crear una miniserie con varios episodios y no quedarnos solo en un piloto por falta de presupuesto. Por eso, reunimos a un grupo de actores talentosos que contaran con las ganas, el tiempo y la dedicación necesarios para dar vida a una temporada completa.<br><br>
+            La serie fue grabada íntegramente en Santiago, y sus personajes representan a jóvenes comunes. Hoy, cada actor siguió su propio camino, pero siempre recordaremos al excelente grupo humano que se formó en torno a este sueño audiovisual.
+          </span>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Diálogo Diapositiva 5 (Amnesia) -->
+  <dialog id="panelReparto5" class="panel-oculto" closedby="any" aria-labelledby="repartoTitle5">
+    <button class="close-panel" aria-label="Cerrar panel">✕</button>
+    <div class="info-content">
+      <div class="info-detalle">
+        <div>
+          <h3 id="repartoTitle5" style="margin-top:0; color:var(--primary-color);">Amnesia</h3>
+          <b>Reparto:</b> Paola Pulgar, Alejandro Montes, Marcela Espinoza, Cristian Romero & Nicole Pogorelow.<br><br>
+          <b>Director:</b> Pablo Tapia<br>
+          <b>Productor:</b> Adolfo Rodriguez<br>
+          <b>Asistente de Dirección:</b> Dominique Saavedra<br>
+          <b>Cámara:</b> Pablo Tapia<br>
+          <b>Co-productores:</b> Cristian Romero, Roberto Yañez.<br>
+          <b>Maquillaje:</b> Verónica Inostroza.
+        </div>
+        <div>
+          <table>
+            <tr>
+              <td valign="top"><img width="120px" src="img/pic-paola.png" alt="Paola Pulgar"></td>
+              <td valign="top"><img width="120px" src="img/pic-ale.png" alt="Alejandro Montes"></td>
+            </tr>
+            <tr>
+              <td valign="top">Paola Pulgar<br><span style="font-size:11px;color:var(--text-gray);">Actriz</span></td>
+              <td valign="top">Alejandro Montes<br><span style="font-size:11px;color:var(--text-gray);">Actor</span></td>
+            </tr>
+            <tr>
+              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm1493996/?ref_=fn_all_nme_1" target="_blank" rel="noopener">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm1763705/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_alejandro%2520montes" target="_blank" rel="noopener">Ver más</a></td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <table>
+            <tr>
+              <td valign="top"><img width="120px" src="img/pic-marcela.png" alt="Marcela Espinoza"></td>
+              <td valign="top"><img width="120px" src="img/pic-nicole.png" alt="Nicole Pogorelow"></td>
+            </tr>
+            <tr>
+              <td valign="top">Marcela Espinoza<br><span style="font-size:11px;color:var(--text-gray);">Actriz</span></td>
+              <td valign="top">Nicole Pogorelow<br><span style="font-size:11px;color:var(--text-gray);">Actriz</span></td>
+            </tr>
+            <tr>
+              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm0261076/?ref_=nv_sr_srsg_0_tt_0_nm_8_in_0_q_marcela%2520espinoza" target="_blank" rel="noopener">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm7778754/?ref_=nv_sr_srsg_0_tt_0_nm_1_in_0_q_nicole%2520pogorelow" target="_blank" rel="noopener">Ver más</a></td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <span style="font-size:16px;font-weight:700;">El Proyecto</span><br><br>
+          <span style="font-size:12px;color:var(--text-light-gray);">
+            “Amnesia” nació en 2016 como un episodio piloto, concebido para dar vida a una miniserie de siete capítulos. Su propósito: reunir fondos a través de un crowdfunding y llegar a la plataforma web de un canal de televisión.<br><br>
+            Aunque el financiamiento no se concretó, quedó este registro: una pieza intensa, misteriosa y cargada de atmósfera donde el suspenso se respira en cada plano. Hoy, este piloto permanece como el eco de un sueño que sigue vivo.
+          </span>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Indicadores de Navegación Vertical Visuales (Flechas a la derecha) -->
+  <div class="nav-arrows">
+    <button class="nav-arrow" id="nav-arrow-up" aria-label="Subir diapositiva">▲</button>
+    <button class="nav-arrow" id="nav-arrow-down" aria-label="Bajar diapositiva">▼</button>
+  </div>
+
+  <!-- CONTENEDOR PRINCIPAL DEL CARRUSEL -->
+  <div class="slider">
+    <div class="slides-wrapper">
+      
+      <!-- DIAPOSITIVA 1: 120 Minutos -->
+      <div class="slide" id="slide-1" data-index="0">
+        <div class="mini-menu">
+          <ul>
+            <li><a href="#" class="btn-reparto" data-panel-id="panelReparto1">REPARTO Y EQUIPO</a></li>
+          </ul>
+        </div>
+        <div class="info-slide">
+          <table class="oculto-movile" style="width:100%;">
+            <tr>
+              <td><div class="etiqueta">cortometraje</div></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td width="50%"><img style="width:80%;" src="img/logo-120min.png" alt="120 Minutos Logo"></td>
+              <td width="50%"></td>
+            </tr>
+            <tr>
+              <td valign="top" class="txt-slide" style="padding-right:20px;">
+                <div>Ignacio es incriminado con el delito de secuestro. Cada minuto que pasa se van agregando pruebas que hacen más difícil probar su inocencia y que podrían acabar con su vida tal cual la había vivido hasta ahora.</div>
+              </td>
+              <td valign="top" class="txt-slide">
+                <div>
+                  <span style="color:var(--text-gray);"><b>Reparto</b>:</span> Carlos Wedeles, Mika Larraguibel, Josefa Nef Videla & Jorge Torres.<br>
+                  <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
+                  <span style="color:var(--text-gray);font-size:12px;">Suspenso 2025 / 16 min.</span><br>
+                  <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+                </div>  
+              </td>
+            </tr>             
+          </table>
+          <div class="oculto-desktop">
+            <img width="50%" src="img/logo-120min.png" alt="120 Minutos Logo"><br><br>
+            Ignacio es incriminado con el delito de secuestro. Cada minuto que pasa se van agregando pruebas que hacen más difícil probar su inocencia y que podrían acabar con su vida.<br><br>
+            <span style="color:var(--text-gray);"><b>Reparto</b>:</span> Carlos Wedeles, Mika Larraguibel, Josefa Nef Videla & Jorge Torres.<br>
+            <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
+            <span style="color:var(--text-gray);font-size:12px;">Suspenso 2025 / 16 min.</span><br>
+            <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+          </div>
+        </div>
+        <div class="reproducir">
+          <!-- Corrección de bug de URL de tráiler específica -->
+          <button class="btn-reproducir" data-video-url="https://www.youtube.com/embed/C1rFDkU4ETg">Reproducir</button>
+        </div>
+        <div class="sombra"></div>
+        <img class="image" src="img/slide1.jpg" alt="120 Minutos">
+        <video muted playsinline preload="none" poster="img/slide1.jpg">
+          <source src="videos/teaser1.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- DIAPOSITIVA 2: Atajo -->
+      <div class="slide" id="slide-2" data-index="1">
+        <div class="info-slide">
+          <table style="width:100%;">
+            <tr>
+              <td><div class="etiqueta">cortometraje</div></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td width="50%"><img style="width:80%;" src="img/logo-atajo.png" alt="Atajo Logo"></td>
+              <td width="50%"></td>
+            </tr>
+            <tr>
+              <td valign="top" class="txt-slide" style="padding-right:20px;">
+                Un fatídico accidente dejó una huella imborrable en el padre de Emanuel. En el aniversario de la tragedia, padre e hijo deberán enfrentar juntos la culpa que han evitado por tanto tiempo.
+              </td>
+              <td valign="top" class="txt-slide">
+                <span style="color:var(--text-gray);"><b>Reparto</b>:</span> En casting.<br>
+                <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
+                <span style="color:var(--text-gray);font-size:12px;">Suspenso 2026 / En Producción.</span><br>
+                <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="reproducir">
+          <!-- Corrección de bug de URL de tráiler específica -->
+          <button class="btn-reproducir" data-video-url="https://www.youtube.com/embed/25rPEj1mAfI">Ver Teaser</button>
+        </div>
+        <div class="sombra"></div>
+        <img class="image" src="img/slide2.jpg" alt="Atajo">
+        <video muted playsinline preload="none" poster="img/slide2.jpg">
+          <source src="videos/atajo-teaser.mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <!-- DIAPOSITIVA 3: Willy Fix -->
+      <div class="slide" id="slide-3" data-index="2">
+        <div class="mini-menu">
+          <ul>
+            <li><a href="#" class="btn-reparto" data-panel-id="panelReparto3">REPARTO Y EQUIPO</a></li>
+          </ul>
+        </div>
+        <div class="info-slide">
+          <table style="width:100%;">
+            <tr>
+              <td><div class="etiqueta">mini serie</div></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td width="50%"><img style="width:80%;" src="img/logo-fix.png" alt="Willy Fix Logo"></td>
+              <td width="50%"></td>
+            </tr>
+            <tr>
+              <td valign="top" class="txt-slide" style="padding-right:20px;">
+                Un informático desempleado y "voyerista" cuya conducta enfermiza lo lleva a presenciar algo que nunca debió ver. Y ahora, su vida corre peligro en manos de una oscura agrupación que no se detendrá hasta dar con su paradero.
+              </td>
+              <td valign="top" class="txt-slide">
+                <span style="color:var(--text-gray);"><b>Reparto</b>:</span> Bastian Arriagada, Catalina Silva, Andrés Lamadrid & Jaime Artus.<br>
+                <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
+                <span style="color:var(--text-gray);font-size:12px;">Suspenso 2016 / 7 Episodios.</span><br>
+                <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!-- Menú de Episodios Lateral -->
+        <div class="side-menu">
+          <div class="side-thumb" data-video="https://www.youtube.com/embed/Hlzedw-3ZEg">
+            <img src="https://img.youtube.com/vi/Hlzedw-3ZEg/mqdefault.jpg" loading="lazy" alt="Episodio 1">
+            <span class="tooltip">Episodio 1</span>
+          </div>
+          <div class="side-thumb" data-video="https://www.youtube.com/embed/lkri9yUou3A">
+            <img src="https://img.youtube.com/vi/lkri9yUou3A/mqdefault.jpg" loading="lazy" alt="Episodio 2">
+            <span class="tooltip">Episodio 2</span>
+          </div>
+          <div class="side-thumb" data-video="https://www.youtube.com/embed/E0k_dDoqFKQ">
+            <img src="https://img.youtube.com/vi/E0k_dDoqFKQ/mqdefault.jpg" loading="lazy" alt="Episodio 3">
+            <span class="tooltip">Episodio 3</span>
+          </div>
+          <div class="side-thumb" data-video="https://www.youtube.com/embed/c5UWvzyWIio">
+            <img src="https://img.youtube.com/vi/c5UWvzyWIio/mqdefault.jpg" loading="lazy" alt="Episodio 4">
+            <span class="tooltip">Episodio 4</span>
+          </div>
+          <div class="side-thumb" data-video="https://www.youtube.com/embed/z3LgSQaljfw">
+            <img src="https://img.youtube.com/vi/z3LgSQaljfw/mqdefault.jpg" loading="lazy" alt="Episodio 5">
+            <span class="tooltip">Episodio 5</span>
+          </div>
+          <div class="side-thumb" data-video="https://www.youtube.com/embed/ecUpVdNvJP8">
+            <img src="https://img.youtube.com/vi/ecUpVdNvJP8/mqdefault.jpg" loading="lazy" alt="Episodio 6">
+            <span class="tooltip">Episodio 6</span>
+          </div>
+          <div class="side-thumb" data-video="https://www.youtube.com/embed/QECzbEK5opg">
+            <img src="https://img.youtube.com/vi/QECzbEK5opg/mqdefault.jpg" loading="lazy" alt="Episodio 7">
+            <span class="tooltip">Episodio 7</span>
+          </div>
+        </div>
+        <div class="sombra"></div>
+        <img class="image" src="img/slide3.jpg" alt="Willy Fix">
+      </div>
+
+      <!-- DIAPOSITIVA 4: The Message -->
+      <div class="slide" id="slide-4" data-index="3">
+        <div class="info-slide">
+          <table style="width:100%;">
+            <tr>
+              <td><div class="etiqueta">cortometraje</div></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td width="50%" height="100px"><img style="width:100%;" src="img/logo-message.png" alt="The Message Logo"></td>
+              <td width="50%"></td>
+            </tr>
+            <tr>
+              <td valign="top" class="txt-slide" style="padding-right:20px;">
+                Un reconocido escritor de novelas afirma que, en sus sueños, voces del más allá intentan comunicarse con él. Al principio nadie le presta atención, pero con el paso del tiempo, su mundo cotidiano se transforma en una pesadilla donde la línea entre la realidad y lo sobrenatural se vuelve cada vez más difusa.
+              </td>
+              <td valign="top" class="txt-slide">
+                <span style="color:var(--text-gray);"><b>Reparto</b>:</span> En casting.<br>
+                <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
+                <span style="color:var(--text-gray);font-size:12px;">Suspenso 2026 / En Producción.</span><br>
+                <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="reproducir">
+          <!-- Corrección de bug de URL de tráiler específica -->
+          <button class="btn-reproducir" data-video-url="https://www.youtube.com/embed/nZz8bLkLZgA">Ver Teaser</button>
+        </div>
+        <div class="sombra"></div>
+        <img class="image" src="img/bg-the-message.png" alt="The Message">
+        <video muted playsinline preload="none" poster="img/bg-the-message.png">
+          <source src="videos/teaser4.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- DIAPOSITIVA 5: Amnesia -->
+      <div class="slide" id="slide-5" data-index="4">
+        <div class="mini-menu">
+          <ul>
+            <li><a href="#" class="btn-reparto" data-panel-id="panelReparto5">REPARTO Y EQUIPO</a></li>
+          </ul>
+        </div>
+        <div class="info-slide">
+          <table style="width:100%;">
+            <tr>
+              <td><div class="etiqueta">episodio piloto</div></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td width="50%" height="110px"><img style="width:90%;" src="img/logo-amnesia.png" alt="Amnesia Logo"></td>
+              <td width="50%"></td>
+            </tr>
+            <tr>
+              <td valign="top" class="txt-slide" style="padding-right:20px;">
+                Natalia, una abogada de la ciudad, despierta un día cualquiera siendo una perfecta desconocida para todo el mundo. Sus amigos y familia no la recuerdan, no importa lo que ella diga o haga, nadie es capaz de reconocerla.
+              </td>
+              <td valign="top" class="txt-slide">
+                <span style="color:var(--text-gray);"><b>Reparto</b>:</span> Paola Pulgar, Alejandro Montes & Marcela Espinoza.<br>
+                <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
+                <span style="color:var(--text-gray);font-size:12px;">Suspenso 2015 / 22 min.</span><br>
+                <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="reproducir">
+          <button class="btn-reproducir" data-video-url="https://www.youtube.com/embed/MJyr8jq4izI">Ver tráiler</button>
+        </div>
+        <div class="sombra"></div>
+        <img class="image" src="img/slide5.jpg" alt="Amnesia">
+        <video muted playsinline preload="none" poster="img/slide5.jpg">
+          <source src="videos/teaser5.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- DIAPOSITIVA 6: Corporativo Shot 1 -->
+      <div class="slide" id="slide-6" data-index="5">
+        <div class="info-slide info-slide--corp">
+          <div class="corp-wrap">
+            
+            <!-- Columna Izquierda: Información de la Empresa -->
+            <div class="corp-left">
+              <div class="corp-brand">
+                <img src="img/Shot1-logo.png" alt="Shot 1 Streaming" class="corp-logo">
+              </div>
+              
+              <!-- Bloque Cine Digital -->
+              <div class="corp-block">
+                <div class="corp-block-header">
+                  <h3 class="corp-title">Cine Digital</h3>
+                  <div class="corp-logos-brand">
+                    <!-- SVG 1studio -->
+                    <svg class="svg-1studio" viewBox="0 0 100 30" width="80" height="24">
+                      <circle cx="15" cy="15" r="12" fill="#83c400"/>
+                      <text x="15" y="21" font-family="Montserrat, sans-serif" font-weight="900" font-size="16" fill="#000" text-anchor="middle">1</text>
+                      <text x="35" y="20" font-family="Montserrat, sans-serif" font-weight="700" font-size="13" fill="#fff">studio</text>
+                    </svg>
+                    <!-- SVG Blackmagic Design -->
+                    <svg class="svg-blackmagic" viewBox="0 0 160 30" width="130" height="24">
+                      <rect x="0" y="5" width="6" height="6" fill="#ff5b00"/>
+                      <rect x="8" y="5" width="6" height="6" fill="#ff7f00"/>
+                      <rect x="0" y="13" width="6" height="6" fill="#ff3000"/>
+                      <rect x="8" y="13" width="6" height="6" fill="#e50000"/>
+                      <text x="22" y="19" font-family="Open Sans, sans-serif" font-weight="600" font-size="11" fill="#fff" letter-spacing="0.5">Blackmagicdesign</text>
+                    </svg>
+                  </div>
+                </div>
+                <p>Lo primero es que nos encanta crear historias entretenidas y cautivantes, en un mundo hiperconectado donde las personas buscan sentirse estrechamente ligadas con el contenido que consumen, historias que nos hagan llegar a distintos conceptos e ideas en el desarrollo de <span class="highlight-green">nuestras películas y cortos</span>.</p>
+                <p>También nos gustan los <span class="text-white-bold">Spots para Internet</span> porque hoy son cada vez más vistos, y eso incrementa el tiempo que pasa el usuario relacionándose con la marca.</p>
+              </div>
+
+              <!-- Bloque Digital Web Series -->
+              <div class="corp-block">
+                <div class="corp-block-header">
+                  <h3 class="corp-title">Digital Web Series</h3>
+                  <!-- Icono de Monitor y Teléfono SVG -->
+                  <svg class="svg-device-icon" viewBox="0 0 40 30" width="30" height="24" fill="none" stroke="#fff" stroke-width="2">
+                    <rect x="2" y="2" width="24" height="16" rx="2"/>
+                    <line x1="8" y1="22" x2="20" y2="22"/>
+                    <line x1="14" y1="18" x2="14" y2="22"/>
+                    <rect x="24" y="8" width="10" height="15" rx="1" fill="#040919"/>
+                    <circle cx="29" cy="20" r="1" fill="#fff"/>
+                  </svg>
+                </div>
+                <p>Una webserie son piezas audiovisuales, de carácter episódico, hechas para ser emitidas para internet. La definición de webserie sirve tanto para producciones de ficción, como para animación o documental y suelen tener una estética cercana a la publicidad o al videoclip, capítulos cortos, personajes interesantes y temas más arriesgados. En Shot1 nos especializamos en <span class="highlight-green">webseries branded content</span>, es decir, las que pagan marcas dentro de su estrategia publicitaria digital.</p>
+              </div>
+            </div>
+
+            <!-- Columna Derecha: Acordeón Horizontal de Genify -->
+            <div class="corp-right">
+              <div class="portrait-accordion">
+                
+                <!-- Card 1: Totem Digital (Featured con Video) -->
+                <div class="portrait-card portrait-card--featured is-active">
+                  <video id="accordionAvatarVideo" src="img/Video-GenExp3.mp4" loop playsinline muted preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;max-width:none;"></video>
+                  <button class="avatar-mute-btn" id="accordionAvatarMuteBtn" title="Silenciar">🔊</button>
+                  <div class="portrait-card-overlay"></div>
+                  <span class="portrait-card-tag">Totem Digital</span>
+                  <button class="portrait-card-arrow" aria-label="Ver Totem Digital">→</button>
+                  <div class="portrait-card-footer">
+                    <h4 class="portrait-card-title">Avatar Interactivo</h4>
+                    <button class="portrait-card-cta">VER EXPERIENCIA ›</button>
+                  </div>
+                </div>
+
+                <!-- Card 2: El Tótem IA -->
+                <div class="portrait-card">
+                  <img src="img/totem.webp" alt="El Tótem IA" loading="lazy">
+                  <div class="portrait-card-overlay"></div>
+                  <span class="portrait-card-tag">Totem Digital</span>
+                  <button class="portrait-card-arrow" aria-label="El Tótem IA">→</button>
+                  <div class="portrait-card-footer">
+                    <h4 class="portrait-card-title">El Tótem IA</h4>
+                    <button class="portrait-card-cta">VER EXPERIENCIA ›</button>
+                  </div>
+                </div>
+
+                <!-- Card 3: Eventos Corp -->
+                <div class="portrait-card">
+                  <img src="img/totem1.webp" alt="Eventos Corporativos" loading="lazy">
+                  <div class="portrait-card-overlay"></div>
+                  <span class="portrait-card-tag">Totem Digital</span>
+                  <button class="portrait-card-arrow" aria-label="Eventos Corporativos">→</button>
+                  <div class="portrait-card-footer">
+                    <h4 class="portrait-card-title">Eventos Corp.</h4>
+                    <button class="portrait-card-cta">VER EXPERIENCIA ›</button>
+                  </div>
+                </div>
+
+                <!-- Card 4: Retrato Pixar -->
+                <div class="portrait-card">
+                  <img src="img/totem2.webp" alt="Retrato Estilo Pixar" loading="lazy">
+                  <div class="portrait-card-overlay"></div>
+                  <span class="portrait-card-tag">Totem Digital</span>
+                  <button class="portrait-card-arrow" aria-label="Retrato Pixar">→</button>
+                  <div class="portrait-card-footer">
+                    <h4 class="portrait-card-title">Retrato Pixar</h4>
+                    <button class="portrait-card-cta">VER EXPERIENCIA ›</button>
+                  </div>
+                </div>
+
+              </div>
+              
+              <!-- Texto Informativo 1 STUDIO / 1 SOUND -->
+              <div class="corp-post-text">
+                <p>Toda la postproducción de los proyectos originales se realiza en <span class="highlight-green">1 STUDIO</span>, área donde se trabaja con los softwares más avanzados del mercado, destacando <strong>DaVinci Resolve</strong> por su versatilidad y compatibilidad total con archivos BRAW, optimizando así el flujo de trabajo con cámaras Blackmagic.</p>
+                <p>Por otro lado, toda obra audiovisual que aspire a contar una buena historia necesita un soundtrack que potencie su narrativa, y el área dedicada a la composición de música incidental para cine y cortometrajes es <span class="highlight-green">1 SOUND</span>. En este espacio creativo se da vida a atmósferas sonoras utilizando herramientas como <strong>GarageBand</strong> y otros recursos de alta calidad, con el objetivo de enriquecer emocionalmente cada escena.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="sombra"></div>
+        <img class="image" src="img/slide6.jpg" alt="Shot 1 Corporativo">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MINIATURAS (Indicadores del carrusel) -->
+  <div class="thumbnails">
+    <img class="thumbnail active" src="img/slide1.jpg" data-index="0" alt="Miniatura 120 Minutos">
+    <img class="thumbnail" src="img/slide2.jpg" data-index="1" alt="Miniatura Atajo">
+    <img class="thumbnail" src="img/slide3.jpg" data-index="2" alt="Miniatura Willy Fix">
+    <img class="thumbnail" src="img/bg-the-message.png" data-index="3" alt="Miniatura The Message">
+    <img class="thumbnail" src="img/slide5.jpg" data-index="4" alt="Miniatura Amnesia">
+    <img class="thumbnail" src="img/slide6.jpg" data-index="5" alt="Miniatura Shot 1 Corporativo">
+  </div>
+
+  <!-- MODAL DE VIDEO DIALOG -->
+  <dialog class="modal-video-dialog" id="videoModal">
+    <button class="close-btn-modal" aria-label="Cerrar video">
+      <img src="img/cierre.png" alt="Cerrar">
+    </button>
+    <div id="negro"></div>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <!-- Enlace a Scripts Refactorizados -->
+  <script src="main.js"></script>
+</body>
+</html>

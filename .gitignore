@@ -1,0 +1,7 @@
+# Medios pesados: viven en Supabase Storage, no en git/Vercel
+videos/
+img/Video-GenExp3.mp4
+img/shot-bg.mp4
+
+# Sistema
+.DS_Store
