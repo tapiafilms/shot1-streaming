@@ -367,8 +367,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Inyectar el Iframe con autoplay y controles en el modal
+    // (soporta URLs que ya traen query, ej. ?start=68)
+    const sep = videoUrl.includes("?") ? "&" : "?";
     modalContent.innerHTML = `
-      <iframe title="Tráiler Shot 1" src="${videoUrl}?autoplay=1&controls=1&modestbranding=1&rel=0"
+      <iframe title="Tráiler Shot 1" src="${videoUrl}${sep}autoplay=1&controls=1&modestbranding=1&rel=0"
         allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
         allowfullscreen></iframe>`;
     
