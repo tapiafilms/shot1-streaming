@@ -1,7 +1,7 @@
 {
-  "name": "Shot 1 Streaming",
+  "name": "Shot 1",
   "short_name": "Shot 1",
-  "description": "Catálogo exclusivo de cortometrajes, miniseries y pilotos audiovisuales dirigidos por Pablo Tapia.",
+  "description": "Instala en tu dispositivo esta app de SHOT1 y disfruta con mejor calidad el catálogo exclusivo de cortometrajes, miniseries y pilotos audiovisuales.",
   "lang": "es",
   "start_url": "/",
   "scope": "/",
@@ -32,11 +32,11 @@
   ],
   "screenshots": [
     {
-      "src": "img/slide1.jpg",
-      "sizes": "1920x1280",
-      "type": "image/jpeg",
+      "src": "img/manifest.png",
+      "sizes": "1280x720",
+      "type": "image/png",
       "form_factor": "wide",
-      "label": "Catálogo Shot 1 Streaming"
+      "label": "Catálogo Shot 1"
     }
   ]
 }
