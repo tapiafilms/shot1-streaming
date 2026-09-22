@@ -78,6 +78,33 @@ header {
   transform: scale(1.02);
 }
 
+/* Botón Instalar PWA (solo visible si el navegador lo permite) */
+.btn-instalar {
+  margin-right: 12px;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: var(--bg-black);
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(131, 196, 0, 0.3);
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.btn-instalar:hover {
+  background-color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+.btn-instalar[hidden] {
+  display: none;
+}
+
 /* Botón Reparto / Menú Secundario */
 .mini-menu {
   position: absolute;

@@ -466,6 +466,35 @@ document.addEventListener("DOMContentLoaded", () => {
     setCardActive(featured);
   }
 
+  // 🔹 PWA: registro del Service Worker (caché offline + instalable)
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js").catch(() => {});
+    });
+  }
+
+  // 🔹 PWA: botón "Instalar app" (solo aparece si el navegador lo permite)
+  let deferredPrompt = null;
+  const installBtn = document.getElementById("btn-instalar");
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    if (installBtn) installBtn.hidden = false;
+  });
+  if (installBtn) {
+    installBtn.addEventListener("click", async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      try { await deferredPrompt.userChoice; } catch (_) {}
+      deferredPrompt = null;
+      installBtn.hidden = true;
+    });
+  }
+  window.addEventListener("appinstalled", () => {
+    deferredPrompt = null;
+    if (installBtn) installBtn.hidden = true;
+  });
+
   // Iniciar en la primera diapositiva
   showSlide(0);
 });

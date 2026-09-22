@@ -13,7 +13,12 @@
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon" type="image/png">
-  <link href="img/favicon.png" rel="apple-touch-icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="manifest.json" rel="manifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Shot 1">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +42,7 @@
       </h1>
     </div>
     <div class="head" style="padding-right: 50px;">
+      <button id="btn-instalar" class="btn-instalar" type="button" hidden>Instalar app</button>
       <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Canal de YouTube de Shot 1 (reemplazar por URL del canal)">
         <img width="100px" src="img/youtube.png" alt="YouTube Canal" loading="lazy">
       </a>
