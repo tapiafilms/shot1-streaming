@@ -794,6 +794,26 @@ dialog.modal-video-dialog::backdrop {
     display: none; /* Oculta flechas en móvil, confiamos en swipe táctil */
   }
 
+  /* Episodios Willy Fix: riel derecho compacto en móvil */
+  .side-menu {
+    top: 130px;
+    transform: none;
+    gap: 8px;
+  }
+
+  .side-menu.show {
+    right: 12px;
+  }
+
+  .side-thumb {
+    width: 96px;
+    height: 54px;
+  }
+
+  .side-thumb .tooltip {
+    display: none; /* Sin hover en táctil */
+  }
+
   .info-detalle {
     flex-direction: column;
     padding: 20px;
@@ -840,15 +860,27 @@ dialog.modal-video-dialog::backdrop {
     width: 150px;
   }
 
-  /* Ajuste de menú derecho en header móvil */
+  /* Ajuste de menú derecho en header móvil: oculta YouTube pero
+     conserva el botón Instalar PWA */
   header .head:last-child {
+    display: flex;
+    padding-right: 0 !important;
+  }
+
+  header .head:last-child a[aria-label^="Canal de YouTube"] {
     display: none;
+  }
+
+  .btn-instalar {
+    margin-right: 0;
+    padding: 8px 12px;
+    font-size: 12px;
   }
 
   .mini-menu {
     display: block; /* Mantener acceso a Reparto y Equipo en móvil */
-    top: auto;
-    bottom: 230px;
+    top: 78px;
+    bottom: auto;
     left: 16px;
   }
 
@@ -860,14 +892,45 @@ dialog.modal-video-dialog::backdrop {
     padding: 8px 12px;
   }
 
+  /* Slides 2-5 usan tablas de 2 columnas: apilar en móvil */
+  .info-slide table,
+  .info-slide tbody,
+  .info-slide tr {
+    display: block;
+    width: 100% !important;
+  }
+
+  .info-slide td {
+    display: block;
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  .info-slide td[width="50%"] img {
+    width: 62% !important;
+    max-width: 260px;
+  }
+
+  .etiqueta {
+    position: static;
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  .txt-slide {
+    font-size: 13px;
+  }
+
   .info-slide {
-    bottom: 150px;
+    bottom: 178px;
     width: 92%;
   }
 
   .reproducir {
-    bottom: 145px;
-    right: 20px;
+    bottom: 108px;
+    right: 16px;
   }
 }
 
@@ -1268,6 +1331,18 @@ dialog.modal-video-dialog::backdrop {
 @media (max-width: 515px) {
   .thumbnail {
     height: 40px;
+  }
+
+  .corp-logo {
+    width: 210px;
+  }
+
+  .corp-title {
+    font-size: 17px;
+  }
+
+  .info-detalle td img {
+    width: 96px !important;
   }
 }
 
