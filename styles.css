@@ -657,6 +657,15 @@ dialog.modal-video-dialog::backdrop {
   border: none;
 }
 
+#modalContent video {
+  max-width: 92vw;
+  max-height: 86vh;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  background: var(--bg-black);
+}
+
 /* Parches negros de seguridad visual en el modal */
 #negro {
   position: absolute;

@@ -366,11 +366,13 @@ document.addEventListener("DOMContentLoaded", () => {
       currentImg.style.opacity = "1";
     }
 
-    // Inyectar el Iframe con autoplay y controles en el modal
-    // (soporta URLs que ya traen query, ej. ?start=68)
+    // Inyectar el reproductor en el modal: <video> nativo para MP4 directos,
+    // iframe de YouTube para el resto. Soporta URLs que ya traen query.
     const sep = videoUrl.includes("?") ? "&" : "?";
-    modalContent.innerHTML = `
-      <iframe title="Tráiler Shot 1" src="${videoUrl}${sep}autoplay=1&controls=1&modestbranding=1&rel=0"
+    const isDirectVideo = /\.mp4($|\?)/i.test(videoUrl);
+    modalContent.innerHTML = isDirectVideo
+      ? `<video title="Piloto Amnesia" src="${videoUrl}" controls autoplay playsinline></video>`
+      : `<iframe title="Tráiler Shot 1" src="${videoUrl}${sep}autoplay=1&controls=1&modestbranding=1&rel=0"
         allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
         allowfullscreen></iframe>`;
     
