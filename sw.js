@@ -1,6 +1,6 @@
 /* Shot 1 Streaming — Service Worker (PWA) */
-const SHELL_CACHE = "shot1-shell-v1";
-const IMG_CACHE = "shot1-img-v1";
+const SHELL_CACHE = "shot1-shell-v2";
+const IMG_CACHE = "shot1-img-v2";
 
 const SHELL_ASSETS = [
   "/",
@@ -10,7 +10,7 @@ const SHELL_ASSETS = [
   "/manifest.json",
   "/img/icon-192.png",
   "/img/icon-512.png",
-  "/img/logo-streaming.png",
+  "/img/logo-streaming.webp",
   "/img/favicon.png",
 ];
 
@@ -66,7 +66,7 @@ self.addEventListener("fetch", (event) => {
           fetch(request).then((res) => {
             if (res.ok) {
               const copy = res.clone();
-              caches.open(IMG_CACHE).then((cache) => cache.put(request, copy));
+              caches.open(IMG_CACHE).then((cache) => cache.put(request, copy)).catch(() => {});
             }
             return res;
           })

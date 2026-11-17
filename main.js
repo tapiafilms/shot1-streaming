@@ -58,6 +58,17 @@ document.addEventListener("DOMContentLoaded", () => {
     thumbs[index].classList.add("active");
     thumbs[index].setAttribute("aria-current", "true");
 
+    // Ocultar el menú de miniaturas en la diapositiva 6 (productora)
+    const thumbnailsBar = document.querySelector(".thumbnails");
+    if (thumbnailsBar) {
+      thumbnailsBar.classList.toggle("is-hidden", index === 5);
+    }
+
+    // Accesibilidad: ocultar diapositivas inactivas a lectores de pantalla
+    slides.forEach((slide, i) => {
+      slide.setAttribute("aria-hidden", i === index ? "false" : "true");
+    });
+
     // Desplazar el contenedor wrapper verticalmente
     wrapper.style.transform = `translateY(-${index * 100}%)`;
 
@@ -92,20 +103,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const video = slide.querySelector("video");
     const img = slide.querySelector(".image");
 
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     if (video && img) {
       const tid = setTimeout(() => {
         img.style.opacity = "0";
         video.style.opacity = "1";
         video.play().catch(() => {});
-      }, 6000); // 6 segundos de imagen estática antes del teaser
+      }, reduceMotion ? 0 : 6000); // Sin demora si se prefiere menos movimiento
       slide.dataset.timeoutId = tid.toString();
     } else {
       // Diapositivas sin video de fondo (ej. Willy Fix): auto-avanzar
-      // tras un tiempo de permanencia para no quedar pegadas
-      transitionTimeoutId = setTimeout(() => {
-        const nextIdx = (index < slides.length - 1) ? index + 1 : 0;
-        showSlide(nextIdx);
-      }, SLIDE_SIN_VIDEO_DWELL);
+      // tras un tiempo de permanencia para no quedar pegadas.
+      // La diapositiva corporativa (última) da más tiempo para leer/scroll.
+      // No auto-avanzar si el usuario prefiere menos movimiento
+      if (!reduceMotion) {
+        const dwell = (index === slides.length - 1)
+          ? 30000
+          : SLIDE_SIN_VIDEO_DWELL;
+        transitionTimeoutId = setTimeout(() => {
+          const nextIdx = (index < slides.length - 1) ? index + 1 : 0;
+          showSlide(nextIdx);
+        }, dwell);
+      }
     }
   }
 
@@ -121,10 +141,13 @@ document.addEventListener("DOMContentLoaded", () => {
         img.style.opacity = "1";
 
         // Avanzar a la siguiente diapositiva automáticamente tras 5 segundos de espera
-        transitionTimeoutId = setTimeout(() => {
-          const nextIdx = (idx < slides.length - 1) ? idx + 1 : 0;
-          showSlide(nextIdx);
-        }, 5000);
+        // (solo si no se prefiere menos movimiento)
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          transitionTimeoutId = setTimeout(() => {
+            const nextIdx = (idx < slides.length - 1) ? idx + 1 : 0;
+            showSlide(nextIdx);
+          }, 5000);
+        }
       });
     }
   });
@@ -367,15 +390,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Inyectar el reproductor en el modal: <video> nativo para MP4 directos,
-    // iframe de YouTube para el resto. Soporta URLs que ya traen query.
+    // iframe de YouTube para el resto. Se construye con DOM API (sin innerHTML)
+    // para evitar inyección si la URL proviene de datos no confiables.
     const sep = videoUrl.includes("?") ? "&" : "?";
     const isDirectVideo = /\.mp4($|\?)/i.test(videoUrl);
-    modalContent.innerHTML = isDirectVideo
-      ? `<video title="Piloto Amnesia" src="${videoUrl}" controls autoplay playsinline></video>`
-      : `<iframe title="Tráiler Shot 1" src="${videoUrl}${sep}autoplay=1&controls=1&modestbranding=1&rel=0"
-        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-        allowfullscreen></iframe>`;
-    
+
+    // Validar esquema seguro
+    if (!/^https?:\/\//i.test(videoUrl)) {
+      return;
+    }
+
+    modalContent.innerHTML = "";
+    if (isDirectVideo) {
+      const video = document.createElement("video");
+      video.title = "Piloto Amnesia";
+      video.src = videoUrl;
+      video.controls = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      modalContent.appendChild(video);
+    } else {
+      const iframe = document.createElement("iframe");
+      iframe.title = "Tráiler Shot 1";
+      iframe.src = `${videoUrl}${sep}autoplay=1&controls=1&modestbranding=1&rel=0`;
+      iframe.allow = "autoplay; fullscreen; encrypted-media; picture-in-picture";
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      modalContent.appendChild(iframe);
+    }
+
     videoModal.showModal();
     document.body.style.overflow = "hidden";
   }
@@ -463,11 +506,19 @@ document.addEventListener("DOMContentLoaded", () => {
         accordionVideo.muted = !accordionVideo.muted;
         muteBtn.textContent = accordionVideo.muted ? "🔇" : "🔊";
         muteBtn.title = accordionVideo.muted ? "Activar sonido" : "Silenciar";
+        muteBtn.setAttribute("aria-label", accordionVideo.muted ? "Activar sonido" : "Silenciar video");
       });
     }
 
     // Inicializar el acordeón en featured
     setCardActive(featured);
+
+    // Sincronizar el icono del botón de silencio con el estado inicial (muted)
+    if (muteBtn && accordionVideo) {
+      muteBtn.textContent = accordionVideo.muted ? "🔇" : "🔊";
+      muteBtn.title = accordionVideo.muted ? "Activar sonido" : "Silenciar";
+      muteBtn.setAttribute("aria-label", accordionVideo.muted ? "Activar sonido" : "Silenciar video");
+    }
   }
 
   // 🔹 PWA: registro del Service Worker (caché offline + instalable)

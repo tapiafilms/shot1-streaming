@@ -10,6 +10,31 @@
   <meta name="keywords" content="Shot 1, streaming, cortometrajes, miniseries, cine chileno, Pablo Tapia, suspenso">
   <meta name="theme-color" content="#040919">
   <meta name="robots" content="index, follow">
+  <meta name="author" content="Pablo Tapia">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://img.youtube.com https://qgomkszjxycqeycrgddd.supabase.co; media-src 'self' https://qgomkszjxycqeycrgddd.supabase.co https://cdn.coverr.co; frame-src https://www.youtube.com; connect-src 'self' https://qgomkszjxycqeycrgddd.supabase.co https://fonts.googleapis.com https://fonts.gstatic.com; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
+
+  <!-- Open Graph / SEO social -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Shot 1 Streaming">
+  <meta property="og:title" content="Shot 1 Streaming">
+  <meta property="og:description" content="Plataforma de streaming Shot 1 - Catálogo exclusivo de cortometrajes, miniseries y pilotos audiovisuales dirigidos por Pablo Tapia.">
+  <meta property="og:image" content="img/Shot1-logo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shot 1 Streaming">
+  <meta name="twitter:description" content="Plataforma de streaming Shot 1 - Catálogo exclusivo de cortometrajes, miniseries y pilotos audiovisuales dirigidos por Pablo Tapia.">
+  <meta name="twitter:image" content="img/Shot1-logo.webp">
+
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Shot 1",
+    "description": "Productora y plataforma de streaming de cortometrajes, miniseries y pilotos audiovisuales.",
+    "founder": "Pablo Tapia"
+  }
+  </script>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon" type="image/png">
@@ -23,28 +48,33 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://qgomkszjxycqeycrgddd.supabase.co" crossorigin>
+  <link rel="dns-prefetch" href="https://img.youtube.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@300;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800&display=swap" rel="stylesheet">
 
+  <!-- Preload de recursos críticos -->
+  <link rel="preload" as="image" href="img/slide1.webp" fetchpriority="high">
   <!-- Enlace a Estilos CSS Refactorizados -->
   <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <!-- Cabecera Premium (Header) -->
   <header>
     <div class="head">
       <h1>
         <a href="#" id="logo-trigger">
-          <img class="logo-principal" src="img/logo-streaming.png" alt="Shot 1 Streaming">
+          <img class="logo-principal" src="img/logo-streaming.webp" alt="Shot 1 Streaming">
         </a>
       </h1>
     </div>
     <div class="head" style="padding-right: 50px;">
       <button id="btn-instalar" class="btn-instalar" type="button" hidden>Instalar app</button>
-      <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="Canal de YouTube de Shot 1 (reemplazar por URL del canal)">
-        <img width="100px" src="img/youtube.png" alt="YouTube Canal" loading="lazy">
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Canal de YouTube de Shot 1 (reemplazar por URL del canal)">
+        <img width="100px" src="img/youtube.webp" alt="YouTube Canal" loading="lazy">
       </a>
     </div> 
   </header>
@@ -61,7 +91,7 @@
   
   <!-- Diálogo Diapositiva 1 (120 Minutos) -->
   <dialog id="panelReparto1" class="panel-oculto" closedby="any" aria-labelledby="repartoTitle1">
-    <button class="close-panel" aria-label="Cerrar panel">✕</button>
+    <button type="button" class="close-panel" aria-label="Cerrar panel">✕</button>
     <div class="info-content">
       <div class="info-detalle">
         <div>
@@ -76,32 +106,32 @@
         <div>
           <table>
             <tr>
-              <td valign="top"><img width="120px" src="img/pic-carlos.png" alt="Carlos Wedeles"></td>
-              <td valign="top"><img width="120px" src="img/pic-mika.png" alt="Mika Larraguibel"></td>
+              <td valign="top"><img width="120px" src="img/pic-carlos.webp" loading="lazy" decoding="async" alt="Carlos Wedeles"></td>
+              <td valign="top"><img width="120px" src="img/pic-mika.webp" loading="lazy" decoding="async" alt="Mika Larraguibel"></td>
             </tr>
             <tr>
                 <td valign="top">Carlos Wedeles<br><span style="font-size:11px;color:var(--text-gray);">Actor y Productor</span></td>
                 <td valign="top">Mika Larraguibel<br><span style="font-size:11px;color:var(--text-gray);">Actriz y Coach de Vida</span></td>
               </tr>
               <tr>
-                <td height="20px" valign="top"><a href="https://www.imdb.com/find?q=Carlos+Wedeles" target="_blank" rel="noopener">Ver más</a></td>
-              <td height="20px" valign="top"><a href="https://mikalarraguibel.com" target="_blank" rel="noopener">Ver más</a></td>
+                <td height="20px" valign="top"><a href="https://www.imdb.com/find?q=Carlos+Wedeles" target="_blank" rel="noopener noreferrer">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://mikalarraguibel.com" target="_blank" rel="noopener noreferrer">Ver más</a></td>
             </tr>
           </table>
         </div>
         <div>
           <table>
             <tr>
-              <td valign="top"><img width="120px" src="img/pic-josefa.png" alt="Josefa Nef Videla"></td>
-              <td valign="top"><img width="120px" src="img/pic-jorge.png" alt="Jorge Torres"></td>
+              <td valign="top"><img width="120px" src="img/pic-josefa.webp" loading="lazy" decoding="async" alt="Josefa Nef Videla"></td>
+              <td valign="top"><img width="120px" src="img/pic-jorge.webp" loading="lazy" decoding="async" alt="Jorge Torres"></td>
             </tr>
             <tr>
                 <td valign="top">Josefa Nef Videla<br><span style="font-size:11px;color:var(--text-gray);">Actriz</span></td>
                 <td valign="top">Jorge Torres<br><span style="font-size:11px;color:var(--text-gray);">Actor</span></td>
               </tr>
               <tr>
-                <td height="20px" valign="top"><a href="https://www.imdb.com/find?q=Josefa+Nef+Videla" target="_blank" rel="noopener">Ver más</a></td>
-                <td height="20px" valign="top"><a href="https://www.imdb.com/find?q=Jorge+Torres+actor" target="_blank" rel="noopener">Ver más</a></td>
+                <td height="20px" valign="top"><a href="https://www.imdb.com/find?q=Josefa+Nef+Videla" target="_blank" rel="noopener noreferrer">Ver más</a></td>
+                <td height="20px" valign="top"><a href="https://www.imdb.com/find?q=Jorge+Torres+actor" target="_blank" rel="noopener noreferrer">Ver más</a></td>
             </tr>
           </table>
         </div>
@@ -119,7 +149,7 @@
 
   <!-- Diálogo Diapositiva 3 (Willy Fix) -->
   <dialog id="panelReparto3" class="panel-oculto" closedby="any" aria-labelledby="repartoTitle3">
-    <button class="close-panel" aria-label="Cerrar panel">✕</button>
+    <button type="button" class="close-panel" aria-label="Cerrar panel">✕</button>
     <div class="info-content">
       <div class="info-detalle">
         <div>
@@ -134,32 +164,32 @@
         <div>
           <table>
             <tr>
-              <td valign="top"><img width="120px" src="img/pic-bastian.png" alt="Bastian Arriagada"></td>
-              <td valign="top"><img width="120px" src="img/pic-cata.png" alt="Catalina Silva"></td>
+              <td valign="top"><img width="120px" src="img/pic-bastian.webp" loading="lazy" decoding="async" alt="Bastian Arriagada"></td>
+              <td valign="top"><img width="120px" src="img/pic-cata.webp" loading="lazy" decoding="async" alt="Catalina Silva"></td>
             </tr>
             <tr>
               <td valign="top">Bastian Arriagada<br><span style="font-size:11px;color:var(--text-gray);">Actor y Pintor</span></td>
               <td valign="top">Catalina Silva<br><span style="font-size:11px;color:var(--text-gray);">Actriz</span></td>
             </tr>
             <tr>
-              <td height="20px" valign="top"><a href="https://chileactores.org/casting/bastian-arriagada/" target="_blank" rel="noopener">Ver más</a></td>
-              <td height="20px" valign="top"><a href="https://www.catalinasilva.com/" target="_blank" rel="noopener">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://chileactores.org/casting/bastian-arriagada/" target="_blank" rel="noopener noreferrer">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://www.catalinasilva.com/" target="_blank" rel="noopener noreferrer">Ver más</a></td>
             </tr>
           </table>
         </div>
         <div>
           <table>
             <tr>
-              <td valign="top"><img width="120px" src="img/pic-jaime.png" alt="Jaime Artus"></td>
-              <td valign="top"><img width="120px" src="img/pic-kathy.png" alt="Kathy Contreras"></td>
+              <td valign="top"><img width="120px" src="img/pic-jaime.webp" loading="lazy" decoding="async" alt="Jaime Artus"></td>
+              <td valign="top"><img width="120px" src="img/pic-kathy.webp" loading="lazy" decoding="async" alt="Kathy Contreras"></td>
             </tr>
             <tr>
               <td valign="top">Jaime Artus<br><span style="font-size:11px;color:var(--text-gray);">Actor</span></td>
               <td valign="top">Kathy Contreras<br><span style="font-size:11px;color:var(--text-gray);">Actriz y Comunicadora</span></td>
             </tr>
             <tr>
-              <td height="20px" valign="top"><a href="https://m.imdb.com/es/name/nm3948992/?ref_=fn_all_nme_1" target="_blank" rel="noopener">Ver más</a></td>
-              <td height="20px" valign="top"><a href="https://m.imdb.com/es/name/nm4738505/?ref_=fn_all_nme_1" target="_blank" rel="noopener">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://m.imdb.com/es/name/nm3948992/?ref_=fn_all_nme_1" target="_blank" rel="noopener noreferrer">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://m.imdb.com/es/name/nm4738505/?ref_=fn_all_nme_1" target="_blank" rel="noopener noreferrer">Ver más</a></td>
             </tr>
           </table>
         </div>
@@ -176,7 +206,7 @@
 
   <!-- Diálogo Diapositiva 5 (Amnesia) -->
   <dialog id="panelReparto5" class="panel-oculto" closedby="any" aria-labelledby="repartoTitle5">
-    <button class="close-panel" aria-label="Cerrar panel">✕</button>
+    <button type="button" class="close-panel" aria-label="Cerrar panel">✕</button>
     <div class="info-content">
       <div class="info-detalle">
         <div>
@@ -192,32 +222,32 @@
         <div>
           <table>
             <tr>
-              <td valign="top"><img width="120px" src="img/pic-paola.png" alt="Paola Pulgar"></td>
-              <td valign="top"><img width="120px" src="img/pic-ale.png" alt="Alejandro Montes"></td>
+              <td valign="top"><img width="120px" src="img/pic-paola.webp" loading="lazy" decoding="async" alt="Paola Pulgar"></td>
+              <td valign="top"><img width="120px" src="img/pic-ale.webp" loading="lazy" decoding="async" alt="Alejandro Montes"></td>
             </tr>
             <tr>
               <td valign="top">Paola Pulgar<br><span style="font-size:11px;color:var(--text-gray);">Actriz</span></td>
               <td valign="top">Alejandro Montes<br><span style="font-size:11px;color:var(--text-gray);">Actor</span></td>
             </tr>
             <tr>
-              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm1493996/?ref_=fn_all_nme_1" target="_blank" rel="noopener">Ver más</a></td>
-              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm1763705/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_alejandro%2520montes" target="_blank" rel="noopener">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm1493996/?ref_=fn_all_nme_1" target="_blank" rel="noopener noreferrer">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm1763705/?ref_=nv_sr_srsg_0_tt_1_nm_7_in_0_q_alejandro%2520montes" target="_blank" rel="noopener noreferrer">Ver más</a></td>
             </tr>
           </table>
         </div>
         <div>
           <table>
             <tr>
-              <td valign="top"><img width="120px" src="img/pic-marcela.png" alt="Marcela Espinoza"></td>
-              <td valign="top"><img width="120px" src="img/pic-nicole.png" alt="Nicole Pogorelow"></td>
+              <td valign="top"><img width="120px" src="img/pic-marcela.webp" loading="lazy" decoding="async" alt="Marcela Espinoza"></td>
+              <td valign="top"><img width="120px" src="img/pic-nicole.webp" loading="lazy" decoding="async" alt="Nicole Pogorelow"></td>
             </tr>
             <tr>
               <td valign="top">Marcela Espinoza<br><span style="font-size:11px;color:var(--text-gray);">Actriz</span></td>
               <td valign="top">Nicole Pogorelow<br><span style="font-size:11px;color:var(--text-gray);">Actriz</span></td>
             </tr>
             <tr>
-              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm0261076/?ref_=nv_sr_srsg_0_tt_0_nm_8_in_0_q_marcela%2520espinoza" target="_blank" rel="noopener">Ver más</a></td>
-              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm7778754/?ref_=nv_sr_srsg_0_tt_0_nm_1_in_0_q_nicole%2520pogorelow" target="_blank" rel="noopener">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm0261076/?ref_=nv_sr_srsg_0_tt_0_nm_8_in_0_q_marcela%2520espinoza" target="_blank" rel="noopener noreferrer">Ver más</a></td>
+              <td height="20px" valign="top"><a href="https://www.imdb.com/es/name/nm7778754/?ref_=nv_sr_srsg_0_tt_0_nm_1_in_0_q_nicole%2520pogorelow" target="_blank" rel="noopener noreferrer">Ver más</a></td>
             </tr>
           </table>
         </div>
@@ -234,16 +264,17 @@
 
   <!-- Indicadores de Navegación Vertical Visuales (Flechas a la derecha) -->
   <div class="nav-arrows">
-    <button class="nav-arrow" id="nav-arrow-up" aria-label="Subir diapositiva">▲</button>
-    <button class="nav-arrow" id="nav-arrow-down" aria-label="Bajar diapositiva">▼</button>
+    <button type="button" class="nav-arrow" id="nav-arrow-up" aria-label="Subir diapositiva">▲</button>
+    <button type="button" class="nav-arrow" id="nav-arrow-down" aria-label="Bajar diapositiva">▼</button>
   </div>
 
   <!-- CONTENEDOR PRINCIPAL DEL CARRUSEL -->
-  <div class="slider">
+  <main id="main-content">
+  <div class="slider" role="region" aria-roledescription="carrusel" aria-label="Catálogo de producciones Shot 1">
     <div class="slides-wrapper">
       
       <!-- DIAPOSITIVA 1: 120 Minutos -->
-      <div class="slide" id="slide-1" data-index="0">
+      <div class="slide" id="slide-1" data-index="0" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 1 de 6: 120 Minutos">
         <div class="mini-menu">
           <ul>
             <li><a href="#" class="btn-reparto" data-panel-id="panelReparto1">REPARTO Y EQUIPO</a></li>
@@ -256,7 +287,7 @@
               <td></td>
             </tr>
             <tr>
-              <td width="50%"><img style="width:80%;" src="img/logo-120min.png" alt="120 Minutos Logo"></td>
+              <td width="50%"><img style="width:80%;" src="img/logo-120min.webp" loading="lazy" decoding="async" alt="120 Minutos Logo"></td>
               <td width="50%"></td>
             </tr>
             <tr>
@@ -268,33 +299,33 @@
                   <span style="color:var(--text-gray);"><b>Reparto</b>:</span> Carlos Wedeles, Mika Larraguibel, Josefa Nef Videla & Jorge Torres.<br>
                   <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
                   <span style="color:var(--text-gray);font-size:12px;">Suspenso 2025 / 16 min.</span><br>
-                  <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+                  <img width="50%" style="padding-top:10px;" src="img/iconos.webp" loading="lazy" decoding="async" alt="Información Técnica">
                 </div>  
               </td>
             </tr>             
           </table>
           <div class="oculto-desktop">
-            <img width="50%" src="img/logo-120min.png" alt="120 Minutos Logo"><br><br>
+            <img width="50%" src="img/logo-120min.webp" loading="lazy" decoding="async" alt="120 Minutos Logo"><br><br>
             Ignacio es incriminado con el delito de secuestro. Cada minuto que pasa se van agregando pruebas que hacen más difícil probar su inocencia y que podrían acabar con su vida.<br><br>
             <span style="color:var(--text-gray);"><b>Reparto</b>:</span> Carlos Wedeles, Mika Larraguibel, Josefa Nef Videla & Jorge Torres.<br>
             <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
             <span style="color:var(--text-gray);font-size:12px;">Suspenso 2025 / 16 min.</span><br>
-            <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+            <img width="50%" style="padding-top:10px;" src="img/iconos.webp" loading="lazy" decoding="async" alt="Información Técnica">
           </div>
         </div>
         <div class="reproducir">
           <!-- Corrección de bug de URL de tráiler específica -->
-          <button class="btn-reproducir" data-video-url="https://www.youtube.com/embed/brCC3UQcRvU">Reproducir</button>
+          <button type="button" class="btn-reproducir" data-video-url="https://www.youtube.com/embed/brCC3UQcRvU">Reproducir</button>
         </div>
         <div class="sombra"></div>
-        <img class="image" src="img/slide1.jpg" alt="120 Minutos">
-        <video muted playsinline preload="none" poster="img/slide1.jpg">
+        <img class="image" src="img/slide1.webp" alt="120 Minutos" fetchpriority="high" decoding="async">
+        <video muted playsinline preload="none" poster="img/slide1.webp">
           <source src="https://qgomkszjxycqeycrgddd.supabase.co/storage/v1/object/public/shot1/videos/teaser1.mp4" type="video/mp4">
         </video>
       </div>
 
       <!-- DIAPOSITIVA 2: Atajo -->
-      <div class="slide" id="slide-2" data-index="1">
+      <div class="slide" id="slide-2" data-index="1" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 2 de 6: Atajo">
         <div class="info-slide">
           <table style="width:100%;">
             <tr>
@@ -302,7 +333,7 @@
               <td></td>
             </tr>
             <tr>
-              <td width="50%"><img style="width:80%;" src="img/logo-atajo.png" alt="Atajo Logo"></td>
+              <td width="50%"><img style="width:80%;" src="img/logo-atajo.webp" loading="lazy" decoding="async" alt="Atajo Logo"></td>
               <td width="50%"></td>
             </tr>
             <tr>
@@ -313,24 +344,24 @@
                 <span style="color:var(--text-gray);"><b>Reparto</b>:</span> En casting.<br>
                 <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
                 <span style="color:var(--text-gray);font-size:12px;">Suspenso 2026 / En Producción.</span><br>
-                <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+                <img width="50%" style="padding-top:10px;" src="img/iconos.webp" loading="lazy" decoding="async" alt="Información Técnica">
               </td>
             </tr>
           </table>
         </div>
         <div class="reproducir">
           <!-- Corrección de bug de URL de tráiler específica -->
-          <button class="btn-reproducir" data-video-url="https://www.youtube.com/embed/25rPEj1mAfI">Ver Teaser</button>
+          <button type="button" class="btn-reproducir" data-video-url="https://www.youtube.com/embed/25rPEj1mAfI">Ver Teaser</button>
         </div>
         <div class="sombra"></div>
-        <img class="image" src="img/slide2.jpg" alt="Atajo">
-        <video muted playsinline preload="none" poster="img/slide2.jpg">
+        <img class="image" src="img/slide2.webp" alt="Atajo" loading="eager" decoding="async">
+        <video muted playsinline preload="none" poster="img/slide2.webp">
           <source src="https://qgomkszjxycqeycrgddd.supabase.co/storage/v1/object/public/shot1/videos/atajo-teaser.mp4" type="video/mp4">
         </video>
       </div>
       
       <!-- DIAPOSITIVA 3: Willy Fix -->
-      <div class="slide" id="slide-3" data-index="2">
+      <div class="slide" id="slide-3" data-index="2" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 3 de 6: Willy Fix">
         <div class="mini-menu">
           <ul>
             <li><a href="#" class="btn-reparto" data-panel-id="panelReparto3">REPARTO Y EQUIPO</a></li>
@@ -343,7 +374,7 @@
               <td></td>
             </tr>
             <tr>
-              <td width="50%"><img style="width:80%;" src="img/logo-fix.png" alt="Willy Fix Logo"></td>
+              <td width="50%"><img style="width:80%;" src="img/logo-fix.webp" loading="lazy" decoding="async" alt="Willy Fix Logo"></td>
               <td width="50%"></td>
             </tr>
             <tr>
@@ -354,7 +385,7 @@
                 <span style="color:var(--text-gray);"><b>Reparto</b>:</span> Bastian Arriagada, Catalina Silva, Andrés Lamadrid & Jaime Artus.<br>
                 <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
                 <span style="color:var(--text-gray);font-size:12px;">Suspenso 2016 / 7 Episodios.</span><br>
-                <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+                <img width="50%" style="padding-top:10px;" src="img/iconos.webp" loading="lazy" decoding="async" alt="Información Técnica">
               </td>
             </tr>
           </table>
@@ -391,11 +422,11 @@
           </div>
         </div>
         <div class="sombra"></div>
-        <img class="image" src="img/slide3.jpg" alt="Willy Fix">
+        <img class="image" src="img/slide3.webp" alt="Willy Fix" loading="eager" decoding="async">
       </div>
 
       <!-- DIAPOSITIVA 4: The Message -->
-      <div class="slide" id="slide-4" data-index="3">
+      <div class="slide" id="slide-4" data-index="3" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 4 de 6: The Message">
         <div class="info-slide">
           <table style="width:100%;">
             <tr>
@@ -403,7 +434,7 @@
               <td></td>
             </tr>
             <tr>
-              <td width="50%" height="100px"><img style="width:100%;" src="img/logo-message.png" alt="The Message Logo"></td>
+              <td width="50%" height="100px"><img style="width:100%;" src="img/logo-message.webp" loading="lazy" decoding="async" alt="The Message Logo"></td>
               <td width="50%"></td>
             </tr>
             <tr>
@@ -414,24 +445,24 @@
                 <span style="color:var(--text-gray);"><b>Reparto</b>:</span> En casting.<br>
                 <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
                 <span style="color:var(--text-gray);font-size:12px;">Suspenso 2026 / En Producción.</span><br>
-                <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+                <img width="50%" style="padding-top:10px;" src="img/iconos.webp" loading="lazy" decoding="async" alt="Información Técnica">
               </td>
             </tr>
           </table>
         </div>
         <div class="reproducir">
           <!-- Corrección de bug de URL de tráiler específica -->
-          <button class="btn-reproducir" data-video-url="https://www.youtube.com/embed/nZz8bLkLZgA">Ver Teaser</button>
+          <button type="button" class="btn-reproducir" data-video-url="https://www.youtube.com/embed/nZz8bLkLZgA">Ver Teaser</button>
         </div>
         <div class="sombra"></div>
-        <img class="image" src="img/bg-the-message.png" alt="The Message">
-        <video muted playsinline preload="none" poster="img/bg-the-message.png">
+        <img class="image" src="img/bg-the-message.webp" alt="The Message" loading="eager" decoding="async">
+        <video muted playsinline preload="none" poster="img/bg-the-message.webp">
           <source src="https://qgomkszjxycqeycrgddd.supabase.co/storage/v1/object/public/shot1/videos/teaser4.mp4" type="video/mp4">
         </video>
       </div>
 
       <!-- DIAPOSITIVA 5: Amnesia -->
-      <div class="slide" id="slide-5" data-index="4">
+      <div class="slide" id="slide-5" data-index="4" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 5 de 6: Amnesia">
         <div class="mini-menu">
           <ul>
             <li><a href="#" class="btn-reparto" data-panel-id="panelReparto5">REPARTO Y EQUIPO</a></li>
@@ -444,7 +475,7 @@
               <td></td>
             </tr>
             <tr>
-              <td width="50%" height="110px"><img style="width:90%;" src="img/logo-amnesia.png" alt="Amnesia Logo"></td>
+              <td width="50%" height="110px"><img style="width:90%;" src="img/logo-amnesia.webp" loading="lazy" decoding="async" alt="Amnesia Logo"></td>
               <td width="50%"></td>
             </tr>
             <tr>
@@ -455,159 +486,160 @@
                 <span style="color:var(--text-gray);"><b>Reparto</b>:</span> Paola Pulgar, Alejandro Montes & Marcela Espinoza.<br>
                 <span style="color:var(--text-gray);"><b>Director</b>:</span> Pablo Tapia<br><br>
                 <span style="color:var(--text-gray);font-size:12px;">Suspenso 2015 / 22 min.</span><br>
-                <img width="50%" style="padding-top:10px;" src="img/iconos.png" alt="Información Técnica">
+                <img width="50%" style="padding-top:10px;" src="img/iconos.webp" loading="lazy" decoding="async" alt="Información Técnica">
               </td>
             </tr>
           </table>
         </div>
         <div class="reproducir">
-          <button class="btn-reproducir" data-video-url="https://qgomkszjxycqeycrgddd.supabase.co/storage/v1/object/public/shot1/videos/Amnesia.mp4">Ver piloto</button>
+          <button type="button" class="btn-reproducir" data-video-url="https://qgomkszjxycqeycrgddd.supabase.co/storage/v1/object/public/shot1/videos/Amnesia.mp4">Ver piloto</button>
         </div>
         <div class="sombra"></div>
-        <img class="image" src="img/slide5.jpg" alt="Amnesia">
-        <video muted playsinline preload="none" poster="img/slide5.jpg">
+        <img class="image" src="img/slide5.webp" alt="Amnesia" loading="eager" decoding="async">
+        <video muted playsinline preload="none" poster="img/slide5.webp">
           <source src="https://qgomkszjxycqeycrgddd.supabase.co/storage/v1/object/public/shot1/videos/teaser5.mp4" type="video/mp4">
         </video>
       </div>
 
       <!-- DIAPOSITIVA 6: Corporativo Shot 1 -->
-      <div class="slide" id="slide-6" data-index="5">
-        <div class="info-slide info-slide--corp">
-          <div class="corp-wrap">
-            
-            <!-- Columna Izquierda: Información de la Empresa -->
-            <div class="corp-left">
-              <div class="corp-brand">
-                <img src="img/Shot1-logo.png" alt="Shot 1 Streaming" class="corp-logo">
-              </div>
-              
-              <!-- Bloque Cine Digital -->
-              <div class="corp-block">
-                <div class="corp-block-header">
-                  <h3 class="corp-title">Cine Digital</h3>
-                  <div class="corp-logos-brand">
-                    <!-- SVG 1studio -->
-                    <svg class="svg-1studio" viewBox="0 0 100 30" width="80" height="24">
-                      <circle cx="15" cy="15" r="12" fill="#83c400"/>
-                      <text x="15" y="21" font-family="Montserrat, sans-serif" font-weight="900" font-size="16" fill="#000" text-anchor="middle">1</text>
-                      <text x="35" y="20" font-family="Montserrat, sans-serif" font-weight="700" font-size="13" fill="#fff">studio</text>
-                    </svg>
-                    <!-- SVG Blackmagic Design -->
-                    <svg class="svg-blackmagic" viewBox="0 0 160 30" width="130" height="24">
-                      <rect x="0" y="5" width="6" height="6" fill="#ff5b00"/>
-                      <rect x="8" y="5" width="6" height="6" fill="#ff7f00"/>
-                      <rect x="0" y="13" width="6" height="6" fill="#ff3000"/>
-                      <rect x="8" y="13" width="6" height="6" fill="#e50000"/>
-                      <text x="22" y="19" font-family="Open Sans, sans-serif" font-weight="600" font-size="11" fill="#fff" letter-spacing="0.5">Blackmagicdesign</text>
-                    </svg>
-                  </div>
+      <div class="slide" id="slide-6" data-index="5" role="group" aria-roledescription="diapositiva" aria-label="Diapositiva 6 de 6: Shot 1 Corporativo">
+                        <div class="info-slide info-slide--corp">
+          <div class="dash-panel">
+
+            <!-- Área superior -->
+            <div class="dash-top">
+              <!-- Hero cámara en vivo -->
+              <div class="dash-hero">
+                <iframe class="dash-hero-video" src="https://www.youtube.com/embed/Lyd1eDiSLBk?autoplay=1&mute=1&controls=0&loop=1&playlist=Lyd1eDiSLBk&modestbranding=1&rel=0" title="Video Shot 1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                <div class="dash-live-pill">● Live</div>
+                <div class="dash-sensors">
+                  <span class="dash-sensor">🌡️ 21°C</span>
+                  <span class="dash-sensor">💧 50%</span>
+                  <span class="dash-sensor">⚡ 350W</span>
+                  <span class="dash-sensor">🔋 80%</span>
                 </div>
-                <p>Lo primero es que nos encanta crear historias entretenidas y cautivantes, en un mundo hiperconectado donde las personas buscan sentirse estrechamente ligadas con el contenido que consumen, historias que nos hagan llegar a distintos conceptos e ideas en el desarrollo de <span class="highlight-green">nuestras películas y cortos</span>.</p>
-                <p>También nos gustan los <span class="text-white-bold">Spots para Internet</span> porque hoy son cada vez más vistos, y eso incrementa el tiempo que pasa el usuario relacionándose con la marca.</p>
               </div>
 
-              <!-- Bloque Digital Web Series -->
-              <div class="corp-block">
-                <div class="corp-block-header">
-                  <h3 class="corp-title">Digital Web Series</h3>
-                  <!-- Icono de Monitor y Teléfono SVG -->
-                  <svg class="svg-device-icon" viewBox="0 0 40 30" width="30" height="24" fill="none" stroke="#fff" stroke-width="2">
-                    <rect x="2" y="2" width="24" height="16" rx="2"/>
-                    <line x1="8" y1="22" x2="20" y2="22"/>
-                    <line x1="14" y1="18" x2="14" y2="22"/>
-                    <rect x="24" y="8" width="10" height="15" rx="1" fill="#040919"/>
-                    <circle cx="29" cy="20" r="1" fill="#fff"/>
-                  </svg>
+              <!-- Panel Rooms -->
+              <div class="dash-rooms">
+                <div class="dash-rooms-header">
+                  <span class="dash-rooms-title">Rooms</span>
+                  <span class="dash-rooms-icon">⚙</span>
                 </div>
-                <p>Una webserie son piezas audiovisuales, de carácter episódico, hechas para ser emitidas para internet. La definición de webserie sirve tanto para producciones de ficción, como para animación o documental y suelen tener una estética cercana a la publicidad o al videoclip, capítulos cortos, personajes interesantes y temas más arriesgados. En Shot1 nos especializamos en <span class="highlight-green">webseries branded content</span>, es decir, las que pagan marcas dentro de su estrategia publicitaria digital.</p>
+                <div class="dash-room-list">
+                  <div class="dash-room">
+                    <span class="dash-room-icon">🛏️</span>
+                    <span class="dash-room-name">Bedroom</span>
+                    <span class="dash-room-count">2 devices</span>
+                    <span class="dash-room-arrow">›</span>
+                  </div>
+                  <div class="dash-room">
+                    <span class="dash-room-icon">🍽️</span>
+                    <span class="dash-room-name">Kitchen</span>
+                    <span class="dash-room-count">2 devices</span>
+                    <span class="dash-room-arrow">›</span>
+                  </div>
+                  <div class="dash-room is-active">
+                    <span class="dash-room-icon">🛋️</span>
+                    <span class="dash-room-name">Living room</span>
+                    <span class="dash-room-count">5 devices</span>
+                    <span class="dash-room-arrow">›</span>
+                  </div>
+                  <div class="dash-room">
+                    <span class="dash-room-icon">🚿</span>
+                    <span class="dash-room-name">Bathroom</span>
+                    <span class="dash-room-count">1 device</span>
+                    <span class="dash-room-arrow">›</span>
+                  </div>
+                </div>
+                <button class="dash-add-room" type="button">+ ADD ROOM</button>
+              </div>
+            </div>
+
+            <!-- Fila inferior: tarjetas de dispositivos -->
+            <div class="dash-bottom">
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <span class="dash-card-title">Bedroom ▾</span>
+                  <span class="dash-card-sub">Robot vacuum cleaner</span>
+                  <span class="dash-toggle is-on"></span>
+                </div>
+                <div class="dash-card-body">
+                  <div class="dash-device-circle">🤖</div>
+                  <div class="dash-badges">
+                    <span class="dash-badge">90% Filter status</span>
+                    <span class="dash-badge">10:00 AM Next Cleaning</span>
+                  </div>
+                </div>
+                <div class="dash-card-stats">
+                  <span class="dash-stat"><b>75 m²</b> Area cleaned</span>
+                  <span class="dash-stat"><b>30 min</b> Cleaning time</span>
+                  <span class="dash-stat"><b>80%</b> Battery charge</span>
+                </div>
+              </div>
+
+              <div class="dash-card dash-card--center">
+                <div class="dash-card-header">
+                  <span class="dash-card-title">Living room ▾</span>
+                  <span class="dash-card-icon">💡</span>
+                </div>
+                <div class="dash-card-body">
+                  <div class="dash-device-circle">💡</div>
+                  <div class="dash-device-name">Smart Lamp</div>
+                  <div class="dash-device-sub">1 device</div>
+                  <span class="dash-toggle is-on"></span>
+                </div>
+                <div class="dash-slider">
+                  <span class="dash-slider-icon">☀</span>
+                  <div class="dash-slider-track"><div class="dash-slider-fill"></div></div>
+                  <span class="dash-slider-value">70%</span>
+                </div>
+              </div>
+
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <span class="dash-card-title">Willy Fix</span>
+                  <span class="dash-card-sub">7 episodios</span>
+                  <span class="dash-toggle is-on"></span>
+                </div>
+                <div class="dash-card-body dash-card-body--video">
+                  <iframe class="dash-card-video" src="https://www.youtube.com/embed/Hlzedw-3ZEg?playlist=lkri9yUou3A,E0k_dDoqFKQ,c5UWvzyWIio,z3LgSQaljfw,ecUpVdNvJP8,QECzbEK5opg&autoplay=0&controls=1&modestbranding=1&rel=0" title="Willy Fix - Episodios" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+                </div>
+                <div class="dash-controls">
+                  <button type="button" aria-label="Anterior">⏮</button>
+                  <button type="button" aria-label="Reproducir" class="dash-play">▶</button>
+                  <button type="button" aria-label="Siguiente">⏭</button>
+                </div>
               </div>
             </div>
 
-            <!-- Columna Derecha: Acordeón Horizontal de Genify -->
-            <div class="corp-right">
-              <div class="portrait-accordion">
-                
-                <!-- Card 1: Totem Digital (Featured con Video) -->
-                <div class="portrait-card portrait-card--featured is-active">
-                  <video id="accordionAvatarVideo" src="https://qgomkszjxycqeycrgddd.supabase.co/storage/v1/object/public/shot1/img/Video-GenExp3.mp4" loop playsinline muted preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;max-width:none;"></video>
-                  <button class="avatar-mute-btn" id="accordionAvatarMuteBtn" title="Silenciar">🔊</button>
-                  <div class="portrait-card-overlay"></div>
-                  <span class="portrait-card-tag">Totem Digital</span>
-                  <button class="portrait-card-arrow" aria-label="Ver Totem Digital">→</button>
-                  <div class="portrait-card-footer">
-                    <h4 class="portrait-card-title">Avatar Interactivo</h4>
-                    <button class="portrait-card-cta">VER EXPERIENCIA ›</button>
-                  </div>
-                </div>
-
-                <!-- Card 2: El Tótem IA -->
-                <div class="portrait-card">
-                  <img src="img/totem.webp" alt="El Tótem IA" loading="lazy">
-                  <div class="portrait-card-overlay"></div>
-                  <span class="portrait-card-tag">Totem Digital</span>
-                  <button class="portrait-card-arrow" aria-label="El Tótem IA">→</button>
-                  <div class="portrait-card-footer">
-                    <h4 class="portrait-card-title">El Tótem IA</h4>
-                    <button class="portrait-card-cta">VER EXPERIENCIA ›</button>
-                  </div>
-                </div>
-
-                <!-- Card 3: Eventos Corp -->
-                <div class="portrait-card">
-                  <img src="img/totem1.webp" alt="Eventos Corporativos" loading="lazy">
-                  <div class="portrait-card-overlay"></div>
-                  <span class="portrait-card-tag">Totem Digital</span>
-                  <button class="portrait-card-arrow" aria-label="Eventos Corporativos">→</button>
-                  <div class="portrait-card-footer">
-                    <h4 class="portrait-card-title">Eventos Corp.</h4>
-                    <button class="portrait-card-cta">VER EXPERIENCIA ›</button>
-                  </div>
-                </div>
-
-                <!-- Card 4: Retrato Pixar -->
-                <div class="portrait-card">
-                  <img src="img/totem2.webp" alt="Retrato Estilo Pixar" loading="lazy">
-                  <div class="portrait-card-overlay"></div>
-                  <span class="portrait-card-tag">Totem Digital</span>
-                  <button class="portrait-card-arrow" aria-label="Retrato Pixar">→</button>
-                  <div class="portrait-card-footer">
-                    <h4 class="portrait-card-title">Retrato Pixar</h4>
-                    <button class="portrait-card-cta">VER EXPERIENCIA ›</button>
-                  </div>
-                </div>
-
-              </div>
-              
-              <!-- Texto Informativo 1 STUDIO / 1 SOUND -->
-              <div class="corp-post-text">
-                <p>Toda la postproducción de los proyectos originales se realiza en <span class="highlight-green">1 STUDIO</span>, área donde se trabaja con los softwares más avanzados del mercado, destacando <strong>DaVinci Resolve</strong> por su versatilidad y compatibilidad total con archivos BRAW, optimizando así el flujo de trabajo con cámaras Blackmagic.</p>
-                <p>Por otro lado, toda obra audiovisual que aspire a contar una buena historia necesita un soundtrack que potencie su narrativa, y el área dedicada a la composición de música incidental para cine y cortometrajes es <span class="highlight-green">1 SOUND</span>. En este espacio creativo se da vida a atmósferas sonoras utilizando herramientas como <strong>GarageBand</strong> y otros recursos de alta calidad, con el objetivo de enriquecer emocionalmente cada escena.</p>
-              </div>
-            </div>
-            
           </div>
         </div>
         <div class="sombra"></div>
-        <img class="image" src="img/slide6.jpg" alt="Shot 1 Corporativo">
+        <img class="image" src="img/slide6.webp" alt="Shot 1 Corporativo" loading="eager" decoding="async">
       </div>
 
     </div>
   </div>
 
   <!-- MINIATURAS (Indicadores del carrusel) -->
-  <div class="thumbnails">
-    <img class="thumbnail active" src="img/slide1.jpg" data-index="0" alt="Miniatura 120 Minutos">
-    <img class="thumbnail" src="img/slide2.jpg" data-index="1" alt="Miniatura Atajo">
-    <img class="thumbnail" src="img/slide3.jpg" data-index="2" alt="Miniatura Willy Fix">
-    <img class="thumbnail" src="img/bg-the-message.png" data-index="3" alt="Miniatura The Message">
-    <img class="thumbnail" src="img/slide5.jpg" data-index="4" alt="Miniatura Amnesia">
-    <img class="thumbnail" src="img/slide6.jpg" data-index="5" alt="Miniatura Shot 1 Corporativo">
+  <div class="thumbnails" role="navigation" aria-label="Navegación de diapositivas">
+    <img class="thumbnail active" src="img/thumb-slide1.webp" data-index="0" loading="lazy" decoding="async" alt="Miniatura 120 Minutos">
+    <img class="thumbnail" src="img/thumb-slide2.webp" data-index="1" loading="lazy" decoding="async" alt="Miniatura Atajo">
+    <img class="thumbnail" src="img/thumb-slide3.webp" data-index="2" loading="lazy" decoding="async" alt="Miniatura Willy Fix">
+    <img class="thumbnail" src="img/thumb-bg-message.webp" data-index="3" loading="lazy" decoding="async" alt="Miniatura The Message">
+    <img class="thumbnail" src="img/thumb-slide5.webp" data-index="4" loading="lazy" decoding="async" alt="Miniatura Amnesia">
+    <div class="thumbnail thumbnail--logo" data-index="5" tabindex="0" role="button" aria-label="Miniatura Shot 1 Corporativo">
+      <img src="img/Shot1-logo.webp" alt="Shot 1" class="thumb-logo" loading="lazy" decoding="async">
+    </div>
   </div>
+
+  </main>
 
   <!-- MODAL DE VIDEO DIALOG -->
   <dialog class="modal-video-dialog" id="videoModal">
-    <button class="close-btn-modal" aria-label="Cerrar video">
-      <img src="img/cierre.png" alt="Cerrar">
+    <button type="button" class="close-btn-modal" aria-label="Cerrar video">
+      <img src="img/cierre.webp" loading="lazy" decoding="async" alt="Cerrar">
     </button>
     <div id="negro"></div>
     <div id="modalContent"></div>
