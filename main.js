@@ -556,9 +556,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 🔹 YouTube IFrame API: controles para Willy Fix en slide 6
 let willyPlayer = null;
-window.onYouTubeIframeAPIReady = function () {
+function initWillyPlayer() {
   const container = document.getElementById("willyFixPlayer");
   if (!container || typeof YT === "undefined" || !YT.Player) return;
+  if (willyPlayer) return;
   willyPlayer = new YT.Player("willyFixPlayer", {
     width: "100%",
     height: "100%",
@@ -608,7 +609,13 @@ window.onYouTubeIframeAPIReady = function () {
       }
     }
   });
-};
+}
+
+// Exponer para la API de YouTube y fallback si ya cargó
+window.onYouTubeIframeAPIReady = initWillyPlayer;
+if (typeof YT !== "undefined" && YT.Player) {
+  initWillyPlayer();
+}
 
 // 🔹 PANTALLA DE BLOQUEO HORIZONTAL (Detección de Orientación)
 const overlay = document.getElementById("bloqueo-horizontal");

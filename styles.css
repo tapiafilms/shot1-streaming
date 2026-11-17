@@ -1923,7 +1923,7 @@ dialog.modal-video-dialog::backdrop {
   height: 100%;
   border: none;
   border-radius: 12px;
-  min-height: 0;
+  min-height: 140px;
 }
 
 .dash-card-video-overlay {
