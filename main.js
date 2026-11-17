@@ -554,6 +554,49 @@ document.addEventListener("DOMContentLoaded", () => {
   showSlide(0);
 });
 
+// 🔹 YouTube IFrame API: controles para Willy Fix en slide 6
+let willyPlayer = null;
+window.onYouTubeIframeAPIReady = function () {
+  const iframe = document.getElementById("willyFixPlayer");
+  if (!iframe || typeof YT === "undefined" || !YT.Player) return;
+  willyPlayer = new YT.Player("willyFixPlayer", {
+    events: {
+      onReady: function () {
+        const playBtn = document.querySelector(".wf-play");
+        const prevBtn = document.querySelector(".wf-prev");
+        const nextBtn = document.querySelector(".wf-next");
+        if (playBtn) {
+          playBtn.addEventListener("click", () => {
+            const state = willyPlayer.getPlayerState();
+            if (state === YT.PlayerState.PLAYING) {
+              willyPlayer.pauseVideo();
+              playBtn.textContent = "▶";
+              playBtn.setAttribute("aria-label", "Reproducir");
+            } else {
+              willyPlayer.playVideo();
+              playBtn.textContent = "⏸";
+              playBtn.setAttribute("aria-label", "Pausar");
+            }
+          });
+        }
+        if (prevBtn) prevBtn.addEventListener("click", () => willyPlayer.previousVideo());
+        if (nextBtn) nextBtn.addEventListener("click", () => willyPlayer.nextVideo());
+      },
+      onStateChange: function (e) {
+        const playBtn = document.querySelector(".wf-play");
+        if (!playBtn) return;
+        if (e.data === YT.PlayerState.PLAYING) {
+          playBtn.textContent = "⏸";
+          playBtn.setAttribute("aria-label", "Pausar");
+        } else {
+          playBtn.textContent = "▶";
+          playBtn.setAttribute("aria-label", "Reproducir");
+        }
+      }
+    }
+  });
+};
+
 // 🔹 PANTALLA DE BLOQUEO HORIZONTAL (Detección de Orientación)
 const overlay = document.getElementById("bloqueo-horizontal");
 const videoBloqueo = document.getElementById("video-fondo");

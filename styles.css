@@ -1727,9 +1727,17 @@ dialog.modal-video-dialog::backdrop {
   z-index: 0;
 }
 
+.dash-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: transparent;
+  cursor: default;
+}
+
 .dash-live-pill,
 .dash-sensors {
-  z-index: 1;
+  z-index: 2;
 }
 
 .dash-live-pill {
@@ -1916,6 +1924,15 @@ dialog.modal-video-dialog::backdrop {
   border: none;
   border-radius: 12px;
   min-height: 0;
+}
+
+.dash-card-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: transparent;
+  cursor: default;
+  border-radius: 12px;
 }
 
 .dash-device-circle {
