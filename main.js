@@ -557,9 +557,22 @@ document.addEventListener("DOMContentLoaded", () => {
 // 🔹 YouTube IFrame API: controles para Willy Fix en slide 6
 let willyPlayer = null;
 window.onYouTubeIframeAPIReady = function () {
-  const iframe = document.getElementById("willyFixPlayer");
-  if (!iframe || typeof YT === "undefined" || !YT.Player) return;
+  const container = document.getElementById("willyFixPlayer");
+  if (!container || typeof YT === "undefined" || !YT.Player) return;
   willyPlayer = new YT.Player("willyFixPlayer", {
+    width: "100%",
+    height: "100%",
+    videoId: "Hlzedw-3ZEg",
+    playerVars: {
+      playlist: "lkri9yUou3A,E0k_dDoqFKQ,c5UWvzyWIio,z3LgSQaljfw,ecUpVdNvJP8,QECzbEK5opg",
+      autoplay: 0,
+      controls: 0,
+      modestbranding: 1,
+      rel: 0,
+      showinfo: 0,
+      iv_load_policy: 3,
+      origin: window.location.origin
+    },
     events: {
       onReady: function () {
         const playBtn = document.querySelector(".wf-play");
