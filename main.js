@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let transitionTimeoutId = null;
   let sideMenuTimeoutId = null;
   const SLIDE_SIN_VIDEO_DWELL = 15000; // ms de permanencia antes de auto-avanzar
+  const SLIDE_LABELS = ["120 Minutos", "Atajo", "Willy Fix", "The Message", "Amnesia", "Shot 1 Corporativo"];
 
   // 🔹 Función para limpiar todos los timeouts de auto-slide y retraso de video
   function clearAllTimeouts() {
@@ -51,19 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.ceil(corpSlide.scrollTop + corpSlide.clientHeight) >= corpSlide.scrollHeight;
   }
 
-  // 🔹 Función principal para mostrar un slide específico
-  function showSlide(index) {
-    clearAllTimeouts();
-    activeIndex = index;
 
-    // Anunciar cambio de diapositiva a lectores de pantalla
-    const liveRegion = document.getElementById("slide-live");
-    if (liveRegion) {
-      const labels = ["120 Minutos", "Atajo", "Willy Fix", "The Message", "Amnesia", "Shot 1 Corporativo"];
-      liveRegion.textContent = `Diapositiva ${index + 1} de ${slides.length}: ${labels[index] || ""}`;
-    }
-
-    // Resetear el estado de todos los videos e imágenes de fondo
+  // 🔹 Helper: resetear videos e imágenes de todas las diapositivas
+  function resetAllSlides() {
     slides.forEach((slide) => {
       const video = slide.querySelector("video");
       const img = slide.querySelector(".image");
@@ -76,20 +67,40 @@ document.addEventListener("DOMContentLoaded", () => {
         img.style.opacity = "1";
       }
     });
+  }
 
-    // Actualizar miniaturas inferiores
+  // 🔹 Helper: actualizar miniaturas inferiores
+  function updateThumbnails(index) {
     thumbs.forEach(t => {
       t.classList.remove("active");
       t.removeAttribute("aria-current");
     });
-    thumbs[index].classList.add("active");
-    thumbs[index].setAttribute("aria-current", "true");
-
-    // Ocultar el menú de miniaturas en la diapositiva 6 (productora)
+    if (thumbs[index]) {
+      thumbs[index].classList.add("active");
+      thumbs[index].setAttribute("aria-current", "true");
+    }
     const thumbnailsBar = document.querySelector(".thumbnails");
     if (thumbnailsBar) {
       thumbnailsBar.classList.toggle("is-hidden", index === 5);
     }
+  }
+
+  // 🔹 Función principal para mostrar un slide específico
+  function showSlide(index) {
+    clearAllTimeouts();
+    activeIndex = index;
+
+    // Anunciar cambio de diapositiva a lectores de pantalla
+    const liveRegion = document.getElementById("slide-live");
+    if (liveRegion) {
+      liveRegion.textContent = `Diapositiva ${index + 1} de ${slides.length}: ${SLIDE_LABELS[index] || ""}`;
+    }
+
+    // Resetear el estado de todos los videos e imágenes de fondo
+    resetAllSlides();
+
+    // Actualizar miniaturas inferiores
+    updateThumbnails(index);
 
     // Accesibilidad: ocultar diapositivas inactivas a lectores de pantalla
     slides.forEach((slide, i) => {
