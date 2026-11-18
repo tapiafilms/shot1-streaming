@@ -394,6 +394,46 @@ dialog.panel-oculto[open]::backdrop {
   line-height: 1.6;
 }
 
+/* Utilidades para estilos inline recurrentes */
+.info-logo {
+  width: 80%;
+  height: auto;
+}
+
+.info-logo--wide {
+  width: 100%;
+  height: auto;
+}
+
+.info-logo--amnesia {
+  width: 90%;
+  height: auto;
+}
+
+.info-iconos {
+  width: 50%;
+  padding-top: 10px;
+}
+
+/* Utilidades de texto */
+.text-gray { color: var(--text-gray); }
+.w-full { width: 100%; }
+.pr-header { padding-right: 50px; }
+.text-light-gray { color: var(--text-light-gray); }
+.text-xs { font-size: 11px; }
+.text-sm { font-size: 12px; }
+.text-md { font-size: 16px; }
+.font-bold { font-weight: 700; }
+
+.txt-slide--right {
+  padding-right: 20px;
+}
+
+.dialog-title {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
 .etiqueta {
   font-size: 11px;
   color: var(--text-white);
