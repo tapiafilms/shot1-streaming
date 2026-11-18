@@ -36,6 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
     clearAllTimeouts();
     activeIndex = index;
 
+    // Anunciar cambio de diapositiva a lectores de pantalla
+    const liveRegion = document.getElementById("slide-live");
+    if (liveRegion) {
+      const labels = ["120 Minutos", "Atajo", "Willy Fix", "The Message", "Amnesia", "Shot 1 Corporativo"];
+      liveRegion.textContent = `Diapositiva ${index + 1} de ${slides.length}: ${labels[index] || ""}`;
+    }
+
     // Resetear el estado de todos los videos e imágenes de fondo
     slides.forEach((slide) => {
       const video = slide.querySelector("video");
@@ -329,6 +336,10 @@ document.addEventListener("DOMContentLoaded", () => {
           });
           dialog.show(); // Usamos show() en lugar de showModal() si queremos mantener el header y carrusel clicleables
           btn.classList.add("active");
+
+          // Accesibilidad: mover el foco al primer elemento enfocable del panel
+          const firstFocusable = dialog.querySelector('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
+          if (firstFocusable) firstFocusable.focus();
         }
       }
     });
@@ -339,7 +350,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Si se cierra con Esc, quitar la clase 'active' de los botones
     dialog.addEventListener("close", () => {
       const associatedBtn = document.querySelector(`[data-panel-id="${dialog.id}"]`);
-      if (associatedBtn) associatedBtn.classList.remove("active");
+      if (associatedBtn) {
+        associatedBtn.classList.remove("active");
+        if (dialog.classList.contains("panel-oculto")) {
+          associatedBtn.focus();
+        }
+      }
       
       // Si es el modal de video, detener el iframe
       if (dialog.id === "videoModal") {
@@ -369,6 +385,23 @@ document.addEventListener("DOMContentLoaded", () => {
         dialog.close();
       }
     });
+
+    if (dialog.classList.contains("panel-oculto")) {
+      dialog.addEventListener("keydown", (e) => {
+        if (!dialog.hasAttribute("open") || e.key !== "Tab") return;
+        const focusables = dialog.querySelectorAll('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      });
+    }
   });
 
   // 🔹 LÓGICA DEL MODAL DE VIDEO (Nativo <dialog> para Tráileres)
