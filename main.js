@@ -522,7 +522,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 🔹 PWA: registro del Service Worker (caché offline + instalable)
-  if ("serviceWorker" in navigator) {
+  // Solo en http/https para evitar errores al abrir el archivo localmente (file://)
+  if ("serviceWorker" in navigator && (location.protocol === "http:" || location.protocol === "https:")) {
     window.addEventListener("load", () => {
       navigator.serviceWorker.register("/sw.js").catch(() => {});
     });
@@ -549,6 +550,12 @@ document.addEventListener("DOMContentLoaded", () => {
     deferredPrompt = null;
     if (installBtn) installBtn.hidden = true;
   });
+
+  // Evitar que el navegador restaure el scroll y muestre otra diapositiva
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+  window.scrollTo(0, 0);
 
   // Iniciar en la primera diapositiva
   showSlide(0);
