@@ -31,6 +31,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  // 🔹 Helper: verificar si la diapositiva corporativa (slide 6) es desplazable
+  function isCorpSlideScrollable() {
+    const corpSlide = document.querySelector(".info-slide--corp");
+    if (!corpSlide) return false;
+    return corpSlide.scrollHeight > corpSlide.clientHeight;
+  }
+
+  function isCorpSlideAtTop() {
+    const corpSlide = document.querySelector(".info-slide--corp");
+    if (!corpSlide) return true;
+    return corpSlide.scrollTop === 0;
+  }
+
+  function isCorpSlideAtBottom() {
+    const corpSlide = document.querySelector(".info-slide--corp");
+    if (!corpSlide) return true;
+    return Math.ceil(corpSlide.scrollTop + corpSlide.clientHeight) >= corpSlide.scrollHeight;
+  }
+
   // 🔹 Función principal para mostrar un slide específico
   function showSlide(index) {
     clearAllTimeouts();
@@ -213,23 +233,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.querySelector("dialog[open]")) return;
 
     // Permitir scroll interno en el Slide 6 si el contenido es más alto que la pantalla
-    if (activeIndex === 5) {
-      const corpSlide = document.querySelector(".info-slide--corp");
-      if (corpSlide) {
-        const isScrollable = corpSlide.scrollHeight > corpSlide.clientHeight;
-        if (isScrollable) {
-          const atTop = corpSlide.scrollTop === 0;
-          const atBottom = Math.ceil(corpSlide.scrollTop + corpSlide.clientHeight) >= corpSlide.scrollHeight;
-
-          if (e.deltaY > 0 && !atBottom) {
-            // Desplazamiento hacia abajo dentro del slide, no cambiar de diapositiva
-            return;
-          }
-          if (e.deltaY < 0 && !atTop) {
-            // Desplazamiento hacia arriba dentro del slide, no cambiar de diapositiva
-            return;
-          }
-        }
+    if (activeIndex === 5 && isCorpSlideScrollable()) {
+      if (e.deltaY > 0 && !isCorpSlideAtBottom()) {
+        return;
+      }
+      if (e.deltaY < 0 && !isCorpSlideAtTop()) {
+        return;
       }
     }
 
@@ -272,23 +281,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const diffY = touchStartY - touchEndY;
 
     // Permitir gestos de swipe scroll internos en el Slide 6
-    if (activeIndex === 5) {
-      const corpSlide = document.querySelector(".info-slide--corp");
-      if (corpSlide) {
-        const isScrollable = corpSlide.scrollHeight > corpSlide.clientHeight;
-        if (isScrollable) {
-          const atTop = corpSlide.scrollTop === 0;
-          const atBottom = Math.ceil(corpSlide.scrollTop + corpSlide.clientHeight) >= corpSlide.scrollHeight;
-
-          if (diffY > 0 && !atBottom) {
-            // Deslizar hacia arriba (scroll hacia abajo) dentro del slide, no cambiar
-            return;
-          }
-          if (diffY < 0 && !atTop) {
-            // Deslizar hacia abajo (scroll hacia arriba) dentro del slide, no cambiar
-            return;
-          }
-        }
+    if (activeIndex === 5 && isCorpSlideScrollable()) {
+      if (diffY > 0 && !isCorpSlideAtBottom()) {
+        return;
+      }
+      if (diffY < 0 && !isCorpSlideAtTop()) {
+        return;
       }
     }
 
