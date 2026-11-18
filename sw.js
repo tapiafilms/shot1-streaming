@@ -3,7 +3,6 @@ const SHELL_CACHE = "shot1-shell-v2";
 const IMG_CACHE = "shot1-img-v2";
 
 const SHELL_ASSETS = [
-  "/",
   "/index.html",
   "/styles.css",
   "/main.js",

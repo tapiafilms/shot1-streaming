@@ -53,7 +53,7 @@ html, body {
 }
 
 body {
-  animation: fadeIn 1.5s ease forwards;
+  animation: fadeIn 0.4s ease forwards;
   opacity: 0;
 }
 

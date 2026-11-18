@@ -634,8 +634,12 @@ function detectarTipoDispositivo() {
 }
 
 function esDispositivoMovil() {
-  const tipo = detectarTipoDispositivo();
-  return tipo === "telefono" || tipo === "tablet";
+  // Solo bloquear en dispositivos con pantalla táctil y UA móvil,
+  // evitando falsos positivos en escritorio con ventana estrecha.
+  const ua = navigator.userAgent.toLowerCase();
+  const isMobileUA = /mobi|iphone|ipad|android/i.test(ua);
+  const hasTouch = (navigator.maxTouchPoints || 0) > 0;
+  return isMobileUA && hasTouch;
 }
 
 function verificarOrientacion() {
